@@ -12,7 +12,7 @@
       lib = nixpkgs.lib // home-manager.lib;
     in
     {
-	  inherit lib;
+      inherit lib;
       nixosConfigurations = {
         marija = lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
