@@ -6,6 +6,13 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  services.xserver = {
+    enable = true;
+    displayManager = {
+      sddm.enable = true;
+    };
+  };
+
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
