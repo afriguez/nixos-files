@@ -6,6 +6,19 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot";
+    };
+    grub = {
+      enable = true;
+      device = "nodev";
+      useOSProber = true;
+      efiSupport = true;
+    };
+  };
+
   networking.hostName = "afriguez";
   networking.networkmanager.enable = true;
 
