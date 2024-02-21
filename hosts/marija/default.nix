@@ -1,8 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  image = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/afriguez/dotfiles/624d9ab011fcfbcd41a0af4451cc160531b87abe/Downloads/Wallpaper/n_interlude_64.png";
+    sha256 = "11xdxxlayk1byxvwp7l1280c715y5c7gzsd0i8d6kchykdsymkzf";
+  };
+in
+{
   imports = [
     ./hardware-configuration.nix
     ./common/users/fer
   ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking = {
     hostName = "marija";
@@ -27,13 +36,24 @@
 
   sound.enable = true;
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa = {
+  services = {
+    pipewire = {
       enable = true;
-      support32Bit = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      pulse.enable = true;
     };
-    pulse.enable = true;
+    xserver = {
+      enable = true;
+      displayManager = {
+        sddm = {
+          enable = true;
+          theme = "chili";
+        };
+      };
+    };
   };
 
   programs = {
@@ -49,5 +69,14 @@
     extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
 
+  environment.systemPackages = with pkgs; [
+    (sddm-chili-theme.override {
+      themeConfig = {
+        background = image;
+      };
+    })
+  ];
+
+  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "23.11";
 }
