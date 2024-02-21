@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
     ./common/users/fer
@@ -34,6 +34,19 @@
       support32Bit = true;
     };
     pulse.enable = true;
+  };
+
+  programs = {
+    steam.enable = true;
+    nano.enable = false;
+  };
+
+  hardware.opengl = {
+    driSupport = true;
+    driSupport32Bit = true;
+
+    extraPackages = [ pkgs.amdvlk ];
+    extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
 
   system.stateVersion = "23.11";
