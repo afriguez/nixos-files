@@ -10,4 +10,6 @@
     swww
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
+
+  wayland.windowManager.hyprland.enable = true;
 }
