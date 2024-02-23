@@ -10,7 +10,7 @@ in
     ./hardware-configuration.nix
     ./common/users/fer
 
-	inputs.home-manager.nixosModules.home-manager
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   home-manager.extraSpecialArgs = { inherit inputs outputs; };
@@ -18,7 +18,7 @@ in
 
   networking = {
     hostName = "marija";
-    networkManager.enable = true;
+    networkmanager.enable = true;
   };
 
   boot.loader = {
@@ -27,6 +27,9 @@ in
       efiSysMountPoint = "/boot";
     };
     grub = {
+      minegrub-theme = {
+        enable = true;
+      };
       enable = true;
       device = "nodev";
       useOSProber = true;
@@ -62,6 +65,7 @@ in
   programs = {
     steam.enable = true;
     nano.enable = false;
+    hyprland.enable = true;
   };
 
   hardware.opengl = {
@@ -73,6 +77,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    discord
     (sddm-chili-theme.override {
       themeConfig = {
         background = image;
