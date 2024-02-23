@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  catppuccin-fish = pkgs.fetchFromGithub {
+  catppuccin-fish = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "fish";
     rev = "0ce27b518e8ead555dec34dd8be3df5bd75cff8e";
