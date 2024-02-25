@@ -5,6 +5,7 @@
   ];
 
   home.packages = with pkgs; [
+    neovim
     p7zip
     htop
     bat
