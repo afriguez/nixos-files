@@ -82,10 +82,6 @@
         "nomaximizerequest, class:.*"
       ];
 
-      master = {
-        new_is_master = true;
-      };
-
       exec = [
         "swww init && sleep 1 && swww img ~/Downloads/Wallpaper/n_interlude_64.png"
         "eww open bar"
@@ -127,16 +123,11 @@
           "SUPER ALT, P, pseudo,"
           "SUPER, I, togglesplit,"
 
-          "SUPER SHIFT, H, resizeactive, -40 0"
-          "SUPER SHIFT, L, resizeactive, 40 0"
-          "SUPER SHIFT, K, resizeactive, 0 -40"
-          "SUPER SHIFT, J, resizeactive, 0 40"
+          "SUPER CTRL SHIFT, H, resizeactive, -40 0"
+          "SUPER CTRL SHIFT, L, resizeactive, 40 0"
+          "SUPER CTRL SHIFT, K, resizeactive, 0 -40"
+          "SUPER CTRL SHIFT, J, resizeactive, 0 40"
           "SUPER, M, fullscreen, 0"
-
-          "SUPER, H, movefocus, l"
-          "SUPER, L, movefocus, r"
-          "SUPER, K, movefocus, u"
-          "SUPER, J, movefocus, d"
 
           "SUPER, N, togglespecialworkspace, magic"
           "SUPER SHIFT, N, movetoworkspace, special:magic"
@@ -170,17 +161,17 @@
           directions) ++
         (lib.mapAttrsToList
           (key: direction:
-            "SUPERSHIFT,${key},swapwindow,${direction}"
+            "SUPER SHIFT,${key},swapwindow,${direction}"
           )
           directions) ++
         (lib.mapAttrsToList
           (key: direction:
-            "SUPERCONTROL,${key},movewindoworgroup,${direction}"
+            "SUPER CTRL,${key},movewindoworgroup,${direction}"
           )
           directions) ++
         (lib.mapAttrsToList
           (key: direction:
-            "SUPERALTSHIFT,${key},movecurrentworkspacetomonitor,${direction}"
+            "SUPER ALT SHIFT,${key},movecurrentworkspacetomonitor,${direction}"
           )
           directions);
 
