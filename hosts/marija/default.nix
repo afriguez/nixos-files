@@ -35,10 +35,7 @@ in
     };
   };
 
-  programs = {
-    steam.enable = true;
-    hyprland.enable = true;
-  };
+  programs.steam.enable = true;
 
   hardware.opengl = {
     driSupport = true;

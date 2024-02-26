@@ -15,4 +15,110 @@
     transmission_4-gtk
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+
+    settings = {
+      monitor = ",highrr,auto,1";
+      input = {
+        kb_layout = "us";
+        follow_mouse = 1;
+        touchpad.natural_scroll = "no";
+        sensitivity = 0;
+      };
+
+      general = {
+        gaps_in = 5;
+        gaps_out = 10;
+        border_size = 2;
+        layout = "dwindle";
+        allow_tearing = false;
+
+        "col.active_border" = "rgba(8aadf4ee) rgba(f5bde6ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
+      };
+
+      decoration = {
+        rounding = 10;
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+        };
+
+        drop_shadow = "yes";
+        shadow_range = 4;
+        shadow_render_power = 3;
+        "col.shadow" = "rgba(1a1a1aee)";
+      };
+
+      animations = {
+        enabled = "yes";
+
+        bezier = [ "myBezier, 0.05, 0.9, 0.1, 1.05" ];
+        animation = [
+          "windows, 1, 7, myBezier"
+          "windowsOut, 1, 7, default, popin 80%"
+          "border, 1, 10, default"
+          "borderangle, 1, 8, default"
+          "fade, 1, 7, default"
+          "workspaces, 1, 6, default"
+        ];
+      };
+
+      dwindle = {
+        pseudotile = "yes";
+        preserve_split = "yes";
+      };
+
+      misc = {
+        disable_hyprland_logo = true;
+      };
+
+      windowrulev2 = [
+        "stayfocused, title:^()$,class:^(steam)$"
+        "minsize 1 1, title:^()$,class:^(steam)$"
+        "nomaximizerequest, class:.*"
+      ];
+
+      "$terminal" = "kitty";
+      "$menu" = "rofi -show drun -icon-theme Papirus -show-icons";
+      "$sshot" = ''grim -g "$(slurp -d)" - | wl-copy -t image/png'';
+      "$wper" = "swww img ~/Downloads/Wallpaper/n_interlude_64.png";
+      "$music" = "youtube-music";
+      "$switchkbd" = "switch_kbd_locale";
+      "$session" = "kitty session";
+
+      bind = [
+        "SUPER SHIFT, RETURN, exec, $terminal"
+        "SUPER SHIFT, S, exec, $sshot"
+        "SUPER, P, exec, $menu"
+        "SUPER, W, exec, $wper"
+        "SUPER CTRL, S, exec, $music"
+        "SUPER SHIFT, P, exec, $session"
+        "SUPER, U, exec, $switchkbd"
+
+        "SUPER SHIFT, C, killactive,"
+        "SUPER SHIFT, Q, exit,"
+        "SUPER, F, togglefloating,"
+        "SUPER ALT, P, pseudo,"
+        "SUPER, I, togglesplit,"
+
+        "SUPER SHIFT, H, resizeactive, -40 0"
+        "SUPER SHIFT, L, resizeactive, 40 0"
+        "SUPER SHIFT, K, resizeactive, 0 -40"
+        "SUPER SHIFT, J, resizeactive, 0 40"
+        "SUPER, M, fullscreen, 0"
+
+        "SUPER, H, movefocus, l"
+        "SUPER, L, movefocus, r"
+        "SUPER, K, movefocus, u"
+        "SUPER, J, movefocus, d"
+
+        "SUPER, N, togglespecialworkspace, magic"
+        "SUPER SHIFT, N, movetoworkspace, special:magic"
+      ];
+    };
+  };
 }
