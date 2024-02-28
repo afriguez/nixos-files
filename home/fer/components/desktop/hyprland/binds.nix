@@ -79,10 +79,10 @@
           "SUPER ALT SHIFT,${key},movecurrentworkspacetomonitor,${direction}"
         )
         directions);
-  };
 
-  bindm = [
-    "SUPER, mouse:272, movewindow"
-    "SUPER, mouse:273, resizewindow"
-  ];
+    bindm = [
+      "SUPER, mouse:272, movewindow"
+      "SUPER, mouse:273, resizewindow"
+    ];
+  };
 }
