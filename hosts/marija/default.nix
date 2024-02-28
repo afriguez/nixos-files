@@ -38,6 +38,7 @@ in
   programs = {
     steam.enable = true;
     hyprland.enable = true;
+    noisetorch.enable = true;
   };
 
   hardware.opengl = {
