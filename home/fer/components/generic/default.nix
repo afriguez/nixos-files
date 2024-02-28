@@ -1,4 +1,4 @@
-{ lib, config, ... }: {
+{ lib, config, pkgs, ... }: {
   imports = [
     ../cli
   ];
@@ -11,6 +11,9 @@
       EDITOR = "nvim";
       VISUAL = "nvim";
     };
+    packages = with pkgs; [  
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    ];
   };
 
   programs = {
