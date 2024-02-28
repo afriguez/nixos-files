@@ -3,6 +3,8 @@
     ../cli
   ];
 
+  fonts.fontconfig.enable = true;
+
   home = {
     username = lib.mkDefault "fer";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
@@ -11,7 +13,7 @@
       EDITOR = "nvim";
       VISUAL = "nvim";
     };
-    packages = with pkgs; [  
+    packages = with pkgs; [
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
   };
