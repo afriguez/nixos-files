@@ -17,6 +17,7 @@ in
   home-manager.extraSpecialArgs = { inherit inputs outputs; };
 
   networking = {
+    #firewall.enable = false;
     hostName = "marija";
     networkmanager.enable = true;
   };
@@ -42,6 +43,7 @@ in
   };
 
   hardware.opengl = {
+    enable = true;
     driSupport = true;
     driSupport32Bit = true;
 
@@ -49,8 +51,11 @@ in
     extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
 
+  virtualisation.docker.enable = true;
+
   environment.systemPackages = with pkgs; [
-    discord
+    prismlauncher
+    #discord
     (sddm-chili-theme.override {
       themeConfig = {
         background = image;
