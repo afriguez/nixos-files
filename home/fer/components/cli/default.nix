@@ -17,6 +17,10 @@
     fzf
     onefetch
     wget
+    nb
+    krita
+    mpv
+    feh
     (nnn.override { withNerdIcons = true; })
   ];
 }
