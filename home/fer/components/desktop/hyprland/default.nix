@@ -17,6 +17,7 @@
     rofi-wayland
     transmission_4-gtk
     youtube-music
+    anki
   ];
 
   wayland.windowManager.hyprland = {
