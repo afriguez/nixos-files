@@ -5,6 +5,7 @@
   ];
 
   home.packages = with pkgs; [
+    krita
     firefox
     grim
     slurp
