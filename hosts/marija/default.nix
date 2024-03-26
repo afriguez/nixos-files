@@ -17,7 +17,7 @@ in
   home-manager.extraSpecialArgs = { inherit inputs outputs; };
 
   networking = {
-    #firewall.enable = false;
+    firewall.enable = false;
     hostName = "marija";
     networkmanager.enable = true;
   };
@@ -62,18 +62,29 @@ in
 
   virtualisation.docker.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    prismlauncher
-    discord
-    cmake
-    nodejs
-    elixir
-    (sddm-chili-theme.override {
-      themeConfig = {
-        background = image;
-      };
-    })
-  ];
+  environment = {
+    sessionVariables = {
+      DOTNET_ROOT = "${pkgs.dotnet-sdk_8}";
+    };
+    systemPackages = with pkgs; [
+      prismlauncher
+      discord
+      cmake
+      nodejs
+      elixir
+      go
+      cargo
+      unzip
+      gleam
+      erlang
+      dotnet-sdk_8
+      (sddm-chili-theme.override {
+        themeConfig = {
+          background = image;
+        };
+      })
+    ];
+  };
 
   system.stateVersion = "23.11";
 }
