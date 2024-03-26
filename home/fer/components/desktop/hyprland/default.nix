@@ -1,4 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  dunst-config = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/afriguez/dotfiles/main/.config/dunst/dunstrc";
+    sha256 = "sha256-v/zbWNgPc7Jh8fy10e5lTIdEDFo5n3CjUPeR1uyO0/U=";
+  };
+in
+{
   imports = [
     ./binds.nix
     ./visual.nix
@@ -20,6 +27,10 @@
     youtube-music
     anki
   ];
+
+  home.file = {
+    ".config/dunst/dunstrc".source = dunst-config;
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
