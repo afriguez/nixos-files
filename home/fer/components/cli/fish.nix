@@ -17,10 +17,9 @@ in
       ls = "ls -l --color=auto";
       nnn = "nnn -d -e -H -r";
       cat = "bat --theme Dracula";
-      cdw = "cd $HOME/workspace && nnn";
-      cdf = "cd $(find ~/ -type d | fzf)";
     };
     interactiveShellInit = ''
+            export PATH="$PATH:/home/fer/.dotnet/tools"
             set -U fish_greeting
             fish_config theme choose Catppuccin\ Macchiato
             fish_config prompt choose astronaut
