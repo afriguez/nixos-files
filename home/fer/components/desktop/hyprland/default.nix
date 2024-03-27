@@ -62,6 +62,7 @@ in
       "$music" = "youtube-music";
       "$switchkbd" = "switch_kbd_locale";
       "$session" = "kitty session";
+      "$toggle_bar" = "eww open --toggle bar";
     };
   };
 }

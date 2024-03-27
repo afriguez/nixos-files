@@ -21,6 +21,7 @@
         "SUPER CTRL, S, exec, $music"
         "SUPER SHIFT, P, exec, $session"
         "SUPER, U, exec, $switchkbd"
+        "SUPER, B, exec, $toggle_bar"
 
         "SUPER SHIFT, C, killactive,"
         "SUPER SHIFT, Q, exit,"
