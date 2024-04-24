@@ -26,6 +26,7 @@ in
     transmission_4-gtk
     youtube-music
     anki
+    rnote
   ];
 
   home.file = {
