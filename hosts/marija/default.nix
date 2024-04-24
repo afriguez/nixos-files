@@ -46,18 +46,25 @@ in
   };
 
   programs = {
-    steam.enable = true;
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+    };
     hyprland.enable = true;
     noisetorch.enable = true;
   };
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+  hardware = {
+    opentabletdriver.enable = true;
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
 
-    extraPackages = [ pkgs.amdvlk ];
-    extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+      extraPackages = [ pkgs.amdvlk ];
+      extraPackages32 = [ pkgs.driversi686Linux.amdvlk ]; 
+    };
   };
 
   virtualisation.docker.enable = true;
@@ -78,6 +85,10 @@ in
       gleam
       erlang
       dotnet-sdk_8
+      ffmpeg-full
+      brave
+      mame
+      rpcs3
       (sddm-chili-theme.override {
         themeConfig = {
           background = image;
