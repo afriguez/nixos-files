@@ -19,12 +19,6 @@
   };
 
   programs = {
-    zellij = {
-      enable = true;
-      settings = {
-        theme = "catppuccin-macchiato";
-      };
-    };
     home-manager.enable = true;
     git.enable = true;
 
@@ -33,8 +27,7 @@
       theme = "Catppuccin-Macchiato";
       settings = {
         shell = "fish";
-        single_window_padding_width = 10;
-        background_opacity = "1";
+        background_opacity = "0.9";
       };
       font = {
         name = "JetBrainsMono NFM";
