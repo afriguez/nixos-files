@@ -8,8 +8,8 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    ./common/users/fer
-    ./common/generic
+    ../common/users/fer
+    ../common/generic
 
     inputs.home-manager.nixosModules.home-manager
   ];

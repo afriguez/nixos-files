@@ -8,5 +8,5 @@
     ];
   };
 
-  home-manager.users.fer = import ../../../../../home/fer/${config.networking.hostName}.nix;
+  home-manager.users.fer = import ../../../../home/fer/${config.networking.hostName}.nix;
 }
