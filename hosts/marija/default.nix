@@ -70,11 +70,7 @@ in
   virtualisation.docker.enable = true;
 
   environment = {
-    sessionVariables = {
-      DOTNET_ROOT = "${pkgs.dotnet-sdk_8}";
-    };
     systemPackages = with pkgs; [
-      prismlauncher
       discord
       cmake
       nodejs
@@ -84,11 +80,16 @@ in
       unzip
       gleam
       erlang
-      dotnet-sdk_8
       ffmpeg-full
       brave
-      mame
-      rpcs3
+      obsidian
+      gamescope
+      openvpn
+      networkmanager-openvpn
+      networkmanagerapplet
+      chromium
+      pavucontrol
+      godot_4
       (sddm-chili-theme.override {
         themeConfig = {
           background = image;
