@@ -25,13 +25,11 @@ in
   boot.loader.grub.minegrub-theme.enable = true;
 
   services = {
-    xserver = {
-      enable = true;
-      displayManager = {
-        sddm = {
-          enable = true;
-          theme = "chili";
-        };
+    displayManager = {
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+        theme = "chili";
       };
     };
     postgresql = {
@@ -57,11 +55,8 @@ in
 
   hardware = {
     opentabletdriver.enable = true;
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-
       extraPackages = [ pkgs.amdvlk ];
       extraPackages32 = [ pkgs.driversi686Linux.amdvlk ]; 
     };

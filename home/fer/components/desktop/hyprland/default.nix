@@ -19,7 +19,7 @@ in
     wl-clipboard
     noto-fonts-cjk
     swww
-    eww-wayland
+    eww
     dunst
     libnotify
     rofi-wayland
