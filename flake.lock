@@ -25,11 +25,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1717341646,
-        "narHash": "sha256-MqRyRgqQJrew4u2sW4nWW62V8E0Nnq8CTa8NQs2clWY=",
+        "lastModified": 1696344261,
+        "narHash": "sha256-Yy3zQufiJ4NjcTbCPEhJ0+4yp1tmjAcApjrnZSDN23M=",
         "owner": "Lxtharia",
         "repo": "minegrub-theme",
-        "rev": "fc71ba219550811513d1de4873b7a137fbbf0ade",
+        "rev": "ef835b35115ff70b9a1be02a89660bf8b60b721a",
         "type": "github"
       },
       "original": {

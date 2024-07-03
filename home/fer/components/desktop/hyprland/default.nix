@@ -48,11 +48,10 @@ in
       windowrulev2 = [
         "stayfocused, title:^()$,class:^(steam)$"
         "minsize 1 1, title:^()$,class:^(steam)$"
-        "nomaximizerequest, class:.*"
       ];
 
       exec = [
-        "swww init && sleep 1 && swww img ~/Downloads/Wallpaper/n_interlude_64.png"
+        "swww-daemon --format xrgb && swww img ~/Downloads/Wallpaper/n_interlude_64.png"
         "eww open bar"
       ];
 
