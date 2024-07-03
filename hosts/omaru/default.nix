@@ -38,6 +38,9 @@
     thermald = {
       enable = true;
     };
+    openssh = {
+      enable = true;
+    };
     postgresql = {
       enable = true;
       authentication = pkgs.lib.mkOverride 10 ''
