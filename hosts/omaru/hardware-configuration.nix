@@ -14,18 +14,18 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-label/nixos";
+    { device = "/dev/disk/by-partlabel/root";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-label/ESP";
+    { device = "/dev/disk/by-partlabel/ESP";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-label/swap"; }
+    [ { device = "/dev/disk/by-partlabel/swap"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
