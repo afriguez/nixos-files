@@ -17,6 +17,7 @@
   };
 
   services = {
+    logind.lidSwitch = "ignore";
     tlp = {
       enable = true;
       settings = {
