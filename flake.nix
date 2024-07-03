@@ -19,11 +19,20 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/marija minegrub-theme.nixosModules.default ];
         };
+        omaru = lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/omaru ];
+        };
       };
 
       homeConfigurations = {
         "fer@marija" = lib.homeManagerConfiguration {
           modules = [ ./home/fer/marija.nix ];
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+        "fer@omaru" = lib.homeManagerConfiguration {
+          modules = [ ./home/fer/omaru.nix ];
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
