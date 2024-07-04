@@ -54,9 +54,14 @@
   };
 
   boot.kernelModules = ["coretemp"];
-  environment.etc."sysconfig/lm_sensors".text = ''
-    HWMON_MODULES="coretemp"
-  '';
+  environment = {
+    etc = {
+      "sysconfig/lm_sensors".text = ''
+        HWMON_MODULES="coretemp"
+      '';
+    };
+    systemPackages = [ pkgs.ngrok ];
+  };
 
   hardware = {
     graphics = {
