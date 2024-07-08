@@ -17,7 +17,6 @@
         "SUPER SHIFT, RETURN, exec, $terminal"
         "SUPER SHIFT, S, exec, $sshot"
         "SUPER, P, exec, $menu"
-        "SUPER, W, exec, $wper"
         "SUPER CTRL, S, exec, $music"
         "SUPER SHIFT, P, exec, $session"
         "SUPER, U, exec, $switchkbd"

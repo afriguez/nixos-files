@@ -51,14 +51,13 @@ in
       ];
 
       exec = [
-        "swww-daemon --format xrgb && swww img ~/Downloads/Wallpaper/n_interlude_64.png"
+        "swww-daemon --format xrgb && swww img ~/Downloads/Wallpaper/in_use.png"
         "eww open bar"
       ];
 
       "$terminal" = "kitty";
       "$menu" = "rofi -show drun -icon-theme Papirus -show-icons";
       "$sshot" = ''grim -g "$(slurp -d)" - | wl-copy -t image/png'';
-      "$wper" = "swww img ~/Downloads/Wallpaper/n_interlude_64.png";
       "$music" = "youtube-music";
       "$switchkbd" = "switch_kbd_locale";
       "$session" = "kitty session";
