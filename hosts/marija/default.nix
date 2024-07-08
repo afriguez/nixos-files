@@ -1,10 +1,4 @@
 { pkgs, inputs, outputs, ... }:
-let
-  image = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/afriguez/dotfiles/624d9ab011fcfbcd41a0af4451cc160531b87abe/Downloads/Wallpaper/n_interlude_64.png";
-    sha256 = "11xdxxlayk1byxvwp7l1280c715y5c7gzsd0i8d6kchykdsymkzf";
-  };
-in
 {
   imports = [
     ./hardware-configuration.nix
@@ -25,15 +19,6 @@ in
   boot.loader.grub.minegrub-theme.enable = true;
 
   services = {
-    displayManager = {
-      sddm = {
-        enable = true;
-        wayland = {
-          enable = true;
-        };
-        theme = "chili";
-      };
-    };
     postgresql = {
       enable = true;
       authentication = pkgs.lib.mkOverride 10 ''
@@ -87,11 +72,6 @@ in
       chromium
       pavucontrol
       godot_4
-      (sddm-chili-theme.override {
-        themeConfig = {
-          background = image;
-        };
-      })
     ];
   };
 
