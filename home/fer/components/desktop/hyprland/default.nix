@@ -1,10 +1,4 @@
 { pkgs, ... }:
-let
-  dunst-config = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/afriguez/dotfiles/main/.config/dunst/dunstrc";
-    sha256 = "sha256-v/zbWNgPc7Jh8fy10e5lTIdEDFo5n3CjUPeR1uyO0/U=";
-  };
-in
 {
   imports = [
     ./binds.nix
@@ -12,26 +6,12 @@ in
   ];
 
   home.packages = with pkgs; [
-    krita
-    firefox
     grim
     slurp
     wl-clipboard
-    noto-fonts-cjk
     swww
-    eww
-    dunst
-    libnotify
     rofi-wayland
-    transmission_4-gtk
-    youtube-music
-    anki
-    rnote
   ];
-
-  home.file = {
-    ".config/dunst/dunstrc".source = dunst-config;
-  };
 
   wayland.windowManager.hyprland = {
     enable = true;
