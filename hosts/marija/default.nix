@@ -1,4 +1,16 @@
 { pkgs, inputs, outputs, ... }:
+let
+  image = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/afriguez/dotfiles/624d9ab011fcfbcd41a0af4451cc160531b87abe/Downloads/Wallpaper/n_interlude_64.png";
+    sha256 = "11xdxxlayk1byxvwp7l1280c715y5c7gzsd0i8d6kchykdsymkzf";
+  };
+  dwm = pkgs.fetchFromGitHub {
+    owner = "afriguez";
+    repo = "dwm";
+    rev = "ebeab23bc8567c89680c8921dba0afbb19166e52";
+    sha256 = "sha256-bFh2tSFEptPTQTJBwm/8eCjj1Y7JqpWukeofQEwdwcI=";
+  };
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -18,7 +30,22 @@
 
   boot.loader.grub.minegrub-theme.enable = true;
 
-  services = {
+  services = {    
+    xserver = {
+      enable = true;
+      windowManager.dwm = {
+        enable = true;
+        package = pkgs.dwm.overrideAttrs {
+          src = dwm;
+        };
+      };
+    };
+    displayManager = {
+      sddm = {
+        enable = true;
+        theme = "chili";
+      };
+    };
     postgresql = {
       enable = true;
       authentication = pkgs.lib.mkOverride 10 ''
@@ -72,6 +99,11 @@
       chromium
       pavucontrol
       godot_4
+      (sddm-chili-theme.override {
+        themeConfig = {
+          background = image;
+        };
+      })
     ];
   };
 
