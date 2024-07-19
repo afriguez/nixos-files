@@ -1,4 +1,4 @@
-{ pkgs, inputs, outputs, ... }:
+{ config, pkgs, inputs, outputs, ... }:
 let
   image = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/afriguez/dotfiles/624d9ab011fcfbcd41a0af4451cc160531b87abe/Downloads/Wallpaper/n_interlude_64.png";
@@ -28,6 +28,10 @@ in
     networkmanager.enable = true;
   };
 
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    v4l2loopback
+  ];
+  boot.kernelModules = [ "v4l2loopback" ];
   boot.loader.grub.minegrub-theme.enable = true;
 
   services = {    
@@ -99,6 +103,10 @@ in
       chromium
       pavucontrol
       godot_4
+      v4l-utils
+      droidcam
+      adb-sync
+      android-tools
       (sddm-chili-theme.override {
         themeConfig = {
           background = image;
