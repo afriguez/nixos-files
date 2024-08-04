@@ -2,7 +2,7 @@
   users.users.fer = {
     isNormalUser = true;
     description = "Fer L.";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "adbusers" ];
     packages = [
       pkgs.home-manager
     ];

@@ -7,8 +7,8 @@ let
   dwm = pkgs.fetchFromGitHub {
     owner = "afriguez";
     repo = "dwm";
-    rev = "ebeab23bc8567c89680c8921dba0afbb19166e52";
-    sha256 = "sha256-bFh2tSFEptPTQTJBwm/8eCjj1Y7JqpWukeofQEwdwcI=";
+    rev = "97d7eaa970fa03a0aa87942824773a0a089fe119";
+    sha256 = "sha256-HN1LnDLF8kQiQNX0h5JnzO0gIrm+mtUv+fkaOMKTTHQ=";
   };
 in
 {
@@ -69,6 +69,7 @@ in
     };
     hyprland.enable = true;
     noisetorch.enable = true;
+    adb.enable = true;
   };
 
   hardware = {
@@ -106,6 +107,7 @@ in
       v4l-utils
       droidcam
       adb-sync
+      appimage-run
       android-tools
       (sddm-chili-theme.override {
         themeConfig = {

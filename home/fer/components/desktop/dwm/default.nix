@@ -4,5 +4,6 @@
     dmenu
     flameshot
     feh
+    picom
   ];
 }

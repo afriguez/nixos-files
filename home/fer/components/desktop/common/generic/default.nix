@@ -18,6 +18,7 @@ in
     anki
     rnote
     grapejuice
+    teams-for-linux
   ];
 
   home.file = {
