@@ -31,7 +31,6 @@ in
   boot.extraModulePackages = with config.boot.kernelPackages; [
     v4l2loopback
   ];
-  boot.kernelModules = [ "v4l2loopback" ];
   boot.loader.grub.minegrub-theme.enable = true;
 
   services = {    
@@ -109,6 +108,13 @@ in
       adb-sync
       appimage-run
       android-tools
+      scrcpy
+      pnpm
+      ripgrep
+      bruno
+      prismlauncher
+      nodePackages.eas-cli
+      vim
       (sddm-chili-theme.override {
         themeConfig = {
           background = image;
