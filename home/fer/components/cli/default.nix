@@ -12,7 +12,6 @@
     socat
     jq
     neofetch
-    cmatrix
     brightnessctl
     fzf
     onefetch

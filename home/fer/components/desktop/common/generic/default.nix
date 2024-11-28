@@ -17,7 +17,6 @@ in
     youtube-music
     anki
     rnote
-    grapejuice
   ];
 
   home.file = {
