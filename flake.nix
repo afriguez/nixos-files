@@ -48,5 +48,6 @@
     };
 
     minegrub-theme.url = "github:Lxtharia/minegrub-theme";
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 }

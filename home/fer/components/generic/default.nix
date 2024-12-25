@@ -14,7 +14,7 @@
       VISUAL = "nvim";
     };
     packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      nerd-fonts.jetbrains-mono
     ];
   };
 
@@ -24,13 +24,13 @@
 
     kitty = {
       enable = true;
-      theme = "Catppuccin-Macchiato";
+      themeFile = "Catppuccin-Macchiato";
       settings = {
         shell = "fish";
         background_opacity = "0.9";
       };
       font = {
-        name = "JetBrainsMono NFM";
+        name = "JetBrainsMono NF";
         size = 12;
       };
       shellIntegration.enableFishIntegration = true;

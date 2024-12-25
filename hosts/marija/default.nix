@@ -20,6 +20,13 @@ in
     inputs.home-manager.nixosModules.home-manager
   ];
 
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "dotnet-runtime-6.0.36"
+    "dotnet-sdk-wrapped-6.0.428"
+    "dotnet-sdk-6.0.428"
+  ];
+
   home-manager.extraSpecialArgs = { inherit inputs outputs; };
 
   networking = {
@@ -34,6 +41,9 @@ in
   boot.loader.grub.minegrub-theme.enable = true;
 
   services = {    
+    openssh = {
+      enable = true;
+    };
     xserver = {
       enable = true;
       windowManager.dwm = {
@@ -84,6 +94,7 @@ in
 
   environment = {
     systemPackages = with pkgs; [
+      inputs.zen-browser.packages."${system}".default
       discord
       cmake
       nodejs
@@ -114,6 +125,7 @@ in
       bruno
       prismlauncher
       nodePackages.eas-cli
+      nodePackages.firebase-tools
       vim
       (sddm-chili-theme.override {
         themeConfig = {

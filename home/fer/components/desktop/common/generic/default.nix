@@ -2,14 +2,14 @@
 let
   dunst-config = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/afriguez/dotfiles/main/.config/dunst/dunstrc";
-    sha256 = "sha256-v/zbWNgPc7Jh8fy10e5lTIdEDFo5n3CjUPeR1uyO0/U=";
+    sha256 = "sha256-S0/PM9uN8hwXccL+VKqQBtVpf9hq9uKv2nkZRPIaGO4=";
   };
 in
 {
   home.packages = with pkgs; [
     krita
     firefox
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     eww
     dunst
     libnotify

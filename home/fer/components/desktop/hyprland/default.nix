@@ -31,7 +31,7 @@
       ];
 
       exec = [
-        "swww-daemon --format xrgb && swww img ~/Downloads/Wallpaper/in_use.jpg"
+        "swww-daemon --format xrgb && swww img ~/Downloads/Wallpaper/in_use.png"
         "eww open bar"
       ];
 
@@ -41,7 +41,7 @@
       "$music" = "youtube-music";
       "$switchkbd" = "switch_kbd_locale";
       "$session" = "kitty session";
-      "$toggle_bar" = "eww open --toggle bar";
+      "$toggle_bar" = "eww open --toggle bar && eww close calendar";
     };
   };
 }
