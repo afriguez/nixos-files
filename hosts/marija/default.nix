@@ -4,12 +4,6 @@ let
     url = "https://raw.githubusercontent.com/afriguez/dotfiles/624d9ab011fcfbcd41a0af4451cc160531b87abe/Downloads/Wallpaper/n_interlude_64.png";
     sha256 = "11xdxxlayk1byxvwp7l1280c715y5c7gzsd0i8d6kchykdsymkzf";
   };
-  dwm = pkgs.fetchFromGitHub {
-    owner = "afriguez";
-    repo = "dwm";
-    rev = "97d7eaa970fa03a0aa87942824773a0a089fe119";
-    sha256 = "sha256-HN1LnDLF8kQiQNX0h5JnzO0gIrm+mtUv+fkaOMKTTHQ=";
-  };
 in
 {
   imports = [
@@ -43,15 +37,13 @@ in
   services = {    
     openssh = {
       enable = true;
+      ports = [22];
+      settings = {
+        PasswordAuthentication = true;
+      };
     };
     xserver = {
       enable = true;
-      windowManager.dwm = {
-        enable = true;
-        package = pkgs.dwm.overrideAttrs {
-          src = dwm;
-        };
-      };
     };
     displayManager = {
       sddm = {

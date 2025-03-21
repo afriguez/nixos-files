@@ -17,7 +17,8 @@
     enable = true;
 
     settings = {
-      monitor = ",highrr,auto,1";
+      monitor = ",preferred,auto,1";
+     # monitor = ",highrr,auto,1";
       input = {
         kb_layout = "us";
         follow_mouse = 1;
@@ -33,6 +34,9 @@
       exec = [
         "swww-daemon --format xrgb && swww img ~/Downloads/Wallpaper/in_use.png"
         "eww open bar"
+        "fcitx5-remote -r"
+        "fcitx5 -d --replace"
+        "fcitx5-remote -r"
       ];
 
       "$terminal" = "kitty";
