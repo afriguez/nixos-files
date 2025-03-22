@@ -32,7 +32,7 @@
       ];
 
       exec = [
-        "swww-daemon --format xrgb && swww img ~/Downloads/Wallpaper/in_use.png"
+        "swww-daemon --format xrgb && swww img ~/Downloads/Wallpaper/in_use.jpg"
         "eww open bar"
         "fcitx5-remote -r"
         "fcitx5 -d --replace"

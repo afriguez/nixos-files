@@ -79,7 +79,7 @@ in
 
   environment = {
     systemPackages = with pkgs; [
-      inputs.zen-browser.packages."${system}".default
+      inputs.zen-browser.packages.${pkgs.system}.default
       discord
       cmake
       nodejs
@@ -90,7 +90,7 @@ in
       # gleam
       erlang
       ffmpeg-full
-      # brave
+      brave
       # obsidian
       # gamescope
       openvpn
