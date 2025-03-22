@@ -20,29 +20,16 @@ in
     };
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
-    ];
-  };
-
-  gtk = {
-    enable = true;
-    cursorTheme = {
-      name = "Catppuccin-Mocha-Mauve-Cursors";
-      package = pkgs.catppuccin-cursors.mochaDark;
-    };
-    iconTheme = {
-      name = "Catpuccin-papirus";
-      package = (pkgs.catppuccin-papirus-folders.override {
+      catppuccin-papirus-folders.override {
         accent = "${accent}";
-        flavor = "${variant}";
-      });
-    };
-    theme = {
-      name = "Catppuccin-GTK";
-      package = (pkgs.catppuccin-gtk.override {
+	flavor = "${variant}";
+      }
+      catppuccin-gtk.override {
         accents = [ "${accent}" ];
         variant = "${variant}";
-      });
-    };
+      }
+      catppuccin-cursors.mochaDark
+    ];
   };
 
   programs = {
