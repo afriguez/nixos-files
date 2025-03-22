@@ -7,8 +7,8 @@ let
 in
 {
   home.packages = with pkgs; [
-    krita
-    firefox
+    # krita
+    # firefox
     noto-fonts-cjk-sans
     eww
     dunst
@@ -16,7 +16,7 @@ in
     transmission_4-gtk
     youtube-music
     anki
-    rnote
+    # rnote
   ];
 
   home.file = {

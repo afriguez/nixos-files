@@ -14,13 +14,6 @@ in
     inputs.home-manager.nixosModules.home-manager
   ];
 
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "dotnet-runtime-6.0.36"
-    "dotnet-sdk-wrapped-6.0.428"
-    "dotnet-sdk-6.0.428"
-  ];
-
   home-manager.extraSpecialArgs = { inherit inputs outputs; };
 
   networking = {
@@ -29,9 +22,9 @@ in
     networkmanager.enable = true;
   };
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    v4l2loopback
-  ];
+  # boot.extraModulePackages = with config.boot.kernelPackages; [
+  #   v4l2loopback
+  # ];
   boot.loader.grub.minegrub-theme.enable = true;
 
   services = {    
@@ -70,7 +63,7 @@ in
     };
     hyprland.enable = true;
     noisetorch.enable = true;
-    adb.enable = true;
+    # adb.enable = true;
   };
 
   hardware = {
@@ -94,30 +87,30 @@ in
       go
       cargo
       unzip
-      gleam
+      # gleam
       erlang
       ffmpeg-full
-      brave
-      obsidian
-      gamescope
+      # brave
+      # obsidian
+      # gamescope
       openvpn
       networkmanager-openvpn
       networkmanagerapplet
-      chromium
+      # chromium
       pavucontrol
-      godot_4
-      v4l-utils
-      droidcam
-      adb-sync
-      appimage-run
-      android-tools
+      # godot_4
+      # v4l-utils
+      # droidcam
+      # adb-sync
+      # appimage-run
+      # android-tools
       scrcpy
-      pnpm
       ripgrep
       bruno
-      prismlauncher
-      nodePackages.eas-cli
-      nodePackages.firebase-tools
+      # pnpm
+      # prismlauncher
+      # nodePackages.eas-cli
+      # nodePackages.firebase-tools
       vim
       (sddm-chili-theme.override {
         themeConfig = {
