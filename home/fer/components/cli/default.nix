@@ -17,7 +17,6 @@
     onefetch
     wget
     nb
-    mpv
     feh
     (nnn.override { withNerdIcons = true; })
   ];

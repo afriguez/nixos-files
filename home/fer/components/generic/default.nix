@@ -18,6 +18,28 @@
     ];
   };
 
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      name = "Catppuccin-Mocha-Mauve-Cursors";
+      package = pkgs.catppuccin-cursors.mochaDark;
+    };
+    iconTheme = {
+      name = "Catpuccin-papirus";
+      package = (pkgs.catppuccin-papirus-folders.override {
+        accent = "${accent}";
+        flavor = "${variant}";
+      });
+    };
+    theme = {
+      name = "Catppuccin-GTK";
+      package = (pkgs.catppuccin-gtk.override {
+        accents = [ "${accent}" ];
+        variant = "${variant}";
+      });
+    };
+  };
+
   programs = {
     home-manager.enable = true;
     git.enable = true;
@@ -34,6 +56,22 @@
         size = 12;
       };
       shellIntegration.enableFishIntegration = true;
+    };
+
+    mpv = {
+      enable = true;
+
+      package = (
+        pkgs.mpv-unwrapped.wrapper {
+          scripts = with pkgs.mpvScripts; [
+            mpvacious
+          ];
+
+	  mpv = pkgs.mpv-unwrapped.override {
+	    waylandSupport = true;
+	  };
+        }
+      );
     };
   };
 }
