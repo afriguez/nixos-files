@@ -20,14 +20,14 @@ in
     };
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
-      catppuccin-papirus-folders.override {
+      (catppuccin-papirus-folders.override {
         accent = "${accent}";
-	flavor = "${variant}";
-      }
-      catppuccin-gtk.override {
+        flavor = "${variant}";
+      })
+      (catppuccin-gtk.override {
         accents = [ "${accent}" ];
         variant = "${variant}";
-      }
+      })
       catppuccin-cursors.mochaDark
     ];
   };
@@ -39,13 +39,14 @@ in
     kitty = {
       enable = true;
       themeFile = "Catppuccin-Macchiato";
+      extraConfig = "background #101119";
       settings = {
         shell = "fish";
         background_opacity = "0.9";
       };
       font = {
         name = "JetBrainsMono NF";
-        size = 12;
+        size = 16;
       };
       shellIntegration.enableFishIntegration = true;
     };

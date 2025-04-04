@@ -96,7 +96,7 @@ in
       openvpn
       networkmanager-openvpn
       networkmanagerapplet
-      # chromium
+      chromium
       pavucontrol
       # godot_4
       # v4l-utils
@@ -112,6 +112,7 @@ in
       # nodePackages.eas-cli
       # nodePackages.firebase-tools
       vim
+      python312Packages.manga-ocr
       (sddm-chili-theme.override {
         themeConfig = {
           background = image;

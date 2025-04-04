@@ -15,7 +15,9 @@ in
     libnotify
     transmission_4-gtk
     youtube-music
-    anki
+    anki-bin
+    mplayer
+    audio-recorder
     # rnote
   ];
 

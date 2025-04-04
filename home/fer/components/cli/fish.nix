@@ -35,9 +35,11 @@ in
         builtin cd $argv
         git rev-parse 2>/dev/null
         if test $status -eq 0
-          onefetch -d dependencies authors contributors license -i /home/${config.home.username}/Downloads/Wallpaper/in_use.png --image-protocol kitty
+          onefetch -d dependencies authors contributors license -i /home/${config.home.username}/Downloads/Wallpaper/in_use.jpg --image-protocol kitty
         end
       end
+
+      source /home/${config.home.username}/.env
     '';
   };
 }

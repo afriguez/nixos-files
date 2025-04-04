@@ -21,6 +21,7 @@
      # monitor = ",highrr,auto,1";
       input = {
         kb_layout = "us";
+      left_handed = true;
         follow_mouse = 1;
         touchpad.natural_scroll = "no";
         sensitivity = 0;
