@@ -21,7 +21,7 @@
      # monitor = ",highrr,auto,1";
       input = {
         kb_layout = "us";
-      left_handed = true;
+        left_handed = true;
         follow_mouse = 1;
         touchpad.natural_scroll = "no";
         sensitivity = 0;
@@ -45,7 +45,7 @@
       "$sshot" = ''grim -g "$(slurp -d)" - | wl-copy -t image/png'';
       "$music" = "youtube-music";
       "$switchkbd" = "switch_kbd_locale";
-      "$session" = "kitty session";
+      "$session" = "kitty --session ~/workspace/session.conf";
       "$toggle_bar" = "eww open --toggle bar && eww close calendar";
     };
   };

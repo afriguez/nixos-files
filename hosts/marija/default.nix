@@ -73,6 +73,8 @@ in
       extraPackages = [ pkgs.amdvlk ];
       extraPackages32 = [ pkgs.driversi686Linux.amdvlk ]; 
     };
+    xone.enable = true;
+    xpad-noone.enable = true;
   };
 
   virtualisation.docker.enable = true;
@@ -80,6 +82,7 @@ in
   environment = {
     systemPackages = with pkgs; [
       inputs.zen-browser.packages.${pkgs.system}.default
+      python3
       discord
       cmake
       nodejs
@@ -108,10 +111,11 @@ in
       ripgrep
       bruno
       # pnpm
-      # prismlauncher
+      prismlauncher
       # nodePackages.eas-cli
       # nodePackages.firebase-tools
       vim
+      inotify-tools
       python312Packages.manga-ocr
       (sddm-chili-theme.override {
         themeConfig = {

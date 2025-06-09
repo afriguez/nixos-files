@@ -40,6 +40,9 @@ in
       enable = true;
       themeFile = "Catppuccin-Macchiato";
       extraConfig = "background #101119";
+      keybindings = {
+        "kitty_mod+y" = "new_tab_with_cwd";
+      };
       settings = {
         shell = "fish";
         background_opacity = "0.9";
