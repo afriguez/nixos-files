@@ -34,7 +34,6 @@
 
       exec = [
         "swww-daemon --format xrgb && swww img ~/Downloads/Wallpaper/in_use.jpg"
-        "eww open bar"
         "fcitx5-remote -r"
         "fcitx5 -d --replace"
         "fcitx5-remote -r"
@@ -44,9 +43,6 @@
       "$menu" = "rofi -show drun -icon-theme Papirus -show-icons";
       "$sshot" = ''grim -g "$(slurp -d)" - | wl-copy -t image/png'';
       "$music" = "youtube-music";
-      "$switchkbd" = "switch_kbd_locale";
-      "$session" = "kitty --session ~/workspace/session.conf";
-      "$toggle_bar" = "eww open --toggle bar && eww close calendar";
     };
   };
 }

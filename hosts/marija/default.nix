@@ -26,6 +26,7 @@ in
   #   v4l2loopback
   # ];
   boot.loader.grub.minegrub-theme.enable = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   services = {    
     openssh = {
@@ -74,49 +75,49 @@ in
       extraPackages32 = [ pkgs.driversi686Linux.amdvlk ]; 
     };
     xone.enable = true;
-    xpad-noone.enable = true;
   };
 
   virtualisation.docker.enable = true;
 
   environment = {
     systemPackages = with pkgs; [
+      inputs.boosteroid.packages.${pkgs.system}.boosteroid
       inputs.zen-browser.packages.${pkgs.system}.default
-      python3
+      # python3
       discord
       cmake
-      nodejs
-      elixir
-      go
-      cargo
+      # nodejs
+      # elixir
+      # go
+      # cargo
       unzip
       # gleam
       erlang
       ffmpeg-full
-      brave
+      # brave
       # obsidian
       # gamescope
-      openvpn
-      networkmanager-openvpn
-      networkmanagerapplet
-      chromium
+      # openvpn
+      # networkmanager-openvpn
+      # networkmanagerapplet
+      # chromium
       pavucontrol
       # godot_4
       # v4l-utils
       # droidcam
-      # adb-sync
+      adb-sync
       # appimage-run
-      # android-tools
+      android-tools
       scrcpy
       ripgrep
       bruno
       # pnpm
-      prismlauncher
+      # prismlauncher
       # nodePackages.eas-cli
       # nodePackages.firebase-tools
       vim
       inotify-tools
-      python312Packages.manga-ocr
+      # python312Packages.manga-ocr
       (sddm-chili-theme.override {
         themeConfig = {
           background = image;

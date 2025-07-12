@@ -63,9 +63,9 @@ in
             mpvacious
           ];
 
-	  mpv = pkgs.mpv-unwrapped.override {
-	    waylandSupport = true;
-	  };
+          mpv = pkgs.mpv-unwrapped.override {
+            waylandSupport = true;
+          };
         }
       );
     };

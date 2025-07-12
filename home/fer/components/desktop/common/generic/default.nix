@@ -7,10 +7,7 @@ let
 in
 {
   home.packages = with pkgs; [
-    # krita
-    # firefox
     noto-fonts-cjk-sans
-    eww
     dunst
     libnotify
     transmission_4-gtk
@@ -18,7 +15,6 @@ in
     anki-bin
     mplayer
     audio-recorder
-    # rnote
   ];
 
   home.file = {
