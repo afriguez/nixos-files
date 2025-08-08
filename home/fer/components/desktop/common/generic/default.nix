@@ -2,7 +2,7 @@
 let
   dunst-config = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/afriguez/dotfiles/main/.config/dunst/dunstrc";
-    sha256 = "sha256-S0/PM9uN8hwXccL+VKqQBtVpf9hq9uKv2nkZRPIaGO4=";
+    sha256 = "sha256-4l1ILAs8VMANOUW+5nyMhMIgxQ0xTe+P/EgN/YUmCok=";
   };
 in
 {
