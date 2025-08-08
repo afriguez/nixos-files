@@ -19,6 +19,7 @@ in
       VISUAL = "nvim";
     };
     packages = with pkgs; [
+      awatcher
       nerd-fonts.jetbrains-mono
       (catppuccin-papirus-folders.override {
         accent = "${accent}";
@@ -30,6 +31,18 @@ in
       })
       catppuccin-cursors.mochaDark
     ];
+  };
+
+  services = {
+    activitywatch = {
+      enable = true;
+      watchers = {
+        awatcher = {
+          package = pkgs.awatcher;
+          executable = "awatcher";
+        };
+      };
+    };
   };
 
   programs = {
