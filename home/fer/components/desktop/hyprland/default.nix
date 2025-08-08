@@ -11,6 +11,7 @@
     wl-clipboard
     swww
     rofi-wayland
+    eww
   ];
 
   wayland.windowManager.hyprland = {
@@ -30,6 +31,7 @@
       windowrulev2 = [
         "stayfocused, title:^()$,class:^(steam)$"
         "minsize 1 1, title:^()$,class:^(steam)$"
+        "float, class:^(input_window)$"
       ];
 
       exec = [
@@ -37,6 +39,10 @@
         "fcitx5-remote -r"
         "fcitx5 -d --replace"
         "fcitx5-remote -r"
+      ];
+
+      exec-once = [
+        "awatcher"
       ];
 
       "$terminal" = "kitty";
