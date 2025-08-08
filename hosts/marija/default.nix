@@ -28,7 +28,7 @@ in
   boot.loader.grub.minegrub-theme.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  services = {    
+  services = {
     openssh = {
       enable = true;
       ports = [22];
@@ -61,6 +61,23 @@ in
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
+      package = pkgs.steam.override {
+        extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
+        extraPkgs = pkgs: with pkgs; [
+          xorg.libXcursor
+          xorg.libXi
+          xorg.libXinerama
+          xorg.libXScrnSaver
+          libpng
+          libpulseaudio
+          libvorbis
+          stdenv.cc.cc.lib
+          libkrb5
+          keyutils
+          gamemode
+        ];
+      };
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
     };
     hyprland.enable = true;
     noisetorch.enable = true;
@@ -79,6 +96,11 @@ in
 
   virtualisation.docker.enable = true;
 
+  nixpkgs.config.packageOverrides = pkgs: {
+    steam = pkgs.steam.override {
+    };
+  };
+
   environment = {
     systemPackages = with pkgs; [
       inputs.boosteroid.packages.${pkgs.system}.boosteroid
@@ -96,7 +118,7 @@ in
       ffmpeg-full
       # brave
       # obsidian
-      # gamescope
+      gamescope
       # openvpn
       # networkmanager-openvpn
       # networkmanagerapplet
@@ -117,6 +139,7 @@ in
       # nodePackages.firebase-tools
       vim
       inotify-tools
+      conda
       # python312Packages.manga-ocr
       (sddm-chili-theme.override {
         themeConfig = {
