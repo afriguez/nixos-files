@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1754015222,
-        "narHash": "sha256-Aoz9HjqYOIMeNGf40cd85G1yVo6KAS6+7EkxG7QhnWk=",
+        "lastModified": 1754923105,
+        "narHash": "sha256-kQ2Um01567eocCd3cy8Fcd61WgBggKCQEzbaMhFC7bo=",
         "owner": "Adrephos",
         "repo": "boosteroid-flake",
-        "rev": "043a36c91c9c5df0056d39f8289289ec2d3a017a",
+        "rev": "283f722a06dc4226deac89a80967d747697b4836",
         "type": "github"
       },
       "original": {

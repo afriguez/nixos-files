@@ -140,7 +140,7 @@ in
       vim
       inotify-tools
       conda
-      # python312Packages.manga-ocr
+      python312Packages.manga-ocr
       (sddm-chili-theme.override {
         themeConfig = {
           background = image;

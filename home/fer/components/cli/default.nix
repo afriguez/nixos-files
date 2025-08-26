@@ -18,6 +18,8 @@
     wget
     nb
     feh
+    ripgrep
+    w3m
     (nnn.override { withNerdIcons = true; })
   ];
 }
