@@ -15,6 +15,8 @@ in
     anki-bin
     mplayer
     audio-recorder
+    rnote
+    krita
   ];
 
   home.file = {

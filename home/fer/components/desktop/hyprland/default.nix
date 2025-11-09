@@ -49,6 +49,13 @@
       "$menu" = "rofi -show drun -icon-theme Papirus -show-icons";
       "$sshot" = ''grim -g "$(slurp -d)" - | wl-copy -t image/png'';
       "$music" = "youtube-music";
+      "$fcitx5_toggle" = "pkill fcitx5 || fcitx5 -d --replace";
+      "$show_time" = "notify-send \"$(date '+%B %d %Y')\" \"$(date '+%A, %H:%M:%S')\" -a \"Date & Time\"";
+      "$sshot_temp" = ''
+        mkdir -p ~/Pictures/temp_screenshots && \
+        grim -g "$(slurp -d)" ~/Pictures/temp_screenshots/screenshot_$(date +%s).png && \
+        find ~/Pictures/temp_screenshots -type f -mtime +1 -delete
+      '';
     };
   };
 }

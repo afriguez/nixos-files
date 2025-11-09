@@ -16,6 +16,9 @@
       [
         "SUPER SHIFT, RETURN, exec, $terminal"
         "SUPER SHIFT, S, exec, $sshot"
+        "SUPER SHIFT, M, exec, $sshot_temp"
+        "SUPER SHIFT, space, exec, $fcitx5_toggle"
+        "SUPER, T, exec, $show_time"
         "SUPER, P, exec, $menu"
         "SUPER CTRL, S, exec, $music"
         "SUPER SHIFT, P, exec, $session"

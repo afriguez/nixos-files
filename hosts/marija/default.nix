@@ -29,6 +29,7 @@ in
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   services = {
+    blueman.enable = true;
     openssh = {
       enable = true;
       ports = [22];
@@ -91,6 +92,7 @@ in
       extraPackages = [ pkgs.amdvlk ];
       extraPackages32 = [ pkgs.driversi686Linux.amdvlk ]; 
     };
+    bluetooth.enable = true;
     xone.enable = true;
   };
 
@@ -124,7 +126,7 @@ in
       # networkmanagerapplet
       # chromium
       pavucontrol
-      # godot_4
+      godot_4
       # v4l-utils
       # droidcam
       adb-sync
@@ -134,13 +136,15 @@ in
       ripgrep
       bruno
       # pnpm
-      # prismlauncher
+      prismlauncher
       # nodePackages.eas-cli
       # nodePackages.firebase-tools
       vim
       inotify-tools
       conda
       python312Packages.manga-ocr
+      tidal-hifi
+      onlyoffice-bin
       (sddm-chili-theme.override {
         themeConfig = {
           background = image;
