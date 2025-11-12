@@ -29,6 +29,7 @@ in
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   services = {
+    gnome.gnome-keyring.enable = true;
     blueman.enable = true;
     openssh = {
       enable = true;
