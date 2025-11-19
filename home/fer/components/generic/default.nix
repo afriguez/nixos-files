@@ -51,15 +51,17 @@ in
 
     kitty = {
       enable = true;
-      themeFile = "gruvbox-dark";
-      #extraConfig = "background #101119";
+      themeFile = "rose-pine";
+      extraConfig = "background #101119";
       #extraConfig = "background #32302f";
       keybindings = {
         "kitty_mod+y" = "new_tab_with_cwd";
+		"kitty_mod+l" = "select_tab";
       };
       settings = {
         shell = "fish";
         background_opacity = "0.9";
+		tab_bar_style = "hidden";
       };
       font = {
         name = "JetBrainsMono NF";

@@ -59,6 +59,7 @@ in
   };
 
   programs = {
+    nix-ld.enable = true;
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
@@ -112,7 +113,7 @@ in
       discord
       cmake
       # nodejs
-      # elixir
+      elixir
       # go
       # cargo
       unzip
@@ -141,11 +142,15 @@ in
       # nodePackages.eas-cli
       # nodePackages.firebase-tools
       vim
+      brave
+      uv
+      luarocks-nix
       inotify-tools
       conda
       python312Packages.manga-ocr
       tidal-hifi
       onlyoffice-bin
+      elixir-ls
       (sddm-chili-theme.override {
         themeConfig = {
           background = image;
