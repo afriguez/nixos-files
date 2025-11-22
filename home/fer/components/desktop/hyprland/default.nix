@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
+let
+  caelestia-shell = inputs.caelestia-shell.packages."x86_64-linux".default.override {
+    withCli = true;
+  };
+in
 {
   imports = [
     ./binds.nix
@@ -10,9 +15,15 @@
     slurp
     wl-clipboard
     swww
-    rofi-wayland
+    rofi
     eww
+    caelestia-shell
   ];
+
+  programs.quickshell = {
+    enable = true;
+    package = caelestia-shell;
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -42,7 +53,7 @@
       ];
 
       exec-once = [
-        "awatcher"
+        "gnome-keyring-daemon --start --components=secrets,pkcs11"
       ];
 
       "$terminal" = "kitty";

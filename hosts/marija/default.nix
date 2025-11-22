@@ -91,8 +91,6 @@ in
     opentabletdriver.enable = true;
     graphics = {
       enable = true;
-      extraPackages = [ pkgs.amdvlk ];
-      extraPackages32 = [ pkgs.driversi686Linux.amdvlk ]; 
     };
     bluetooth.enable = true;
     xone.enable = true;
@@ -107,8 +105,8 @@ in
 
   environment = {
     systemPackages = with pkgs; [
-      inputs.boosteroid.packages.${pkgs.system}.boosteroid
-      inputs.zen-browser.packages.${pkgs.system}.default
+      inputs.boosteroid.packages.${pkgs.stdenv.hostPlatform.system}.boosteroid
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       # python3
       discord
       cmake
@@ -147,9 +145,10 @@ in
       luarocks-nix
       inotify-tools
       conda
+      qview
       python312Packages.manga-ocr
       tidal-hifi
-      onlyoffice-bin
+      onlyoffice-desktopeditors
       elixir-ls
       (sddm-chili-theme.override {
         themeConfig = {

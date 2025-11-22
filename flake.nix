@@ -51,5 +51,7 @@
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     boosteroid.url = "github:Adrephos/boosteroid-flake";
+    caelestia-shell.url = "github:caelestia-dots/shell";
+    caelestia-shell.inputs.nixpkgs.follows = "nixpkgs";
   };
 }

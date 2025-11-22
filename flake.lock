@@ -18,6 +18,52 @@
         "type": "github"
       }
     },
+    "caelestia-cli": {
+      "inputs": {
+        "caelestia-shell": [
+          "caelestia-shell"
+        ],
+        "nixpkgs": [
+          "caelestia-shell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1763172111,
+        "narHash": "sha256-QseFQKZgMq/kbHlrhfaNlwEyQ1H3J+UhnbgpAIEGpvA=",
+        "owner": "caelestia-dots",
+        "repo": "cli",
+        "rev": "d89c438284311e99148ece61054cd6f9bc8e8cb7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "caelestia-dots",
+        "repo": "cli",
+        "type": "github"
+      }
+    },
+    "caelestia-shell": {
+      "inputs": {
+        "caelestia-cli": "caelestia-cli",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "quickshell": "quickshell"
+      },
+      "locked": {
+        "lastModified": 1763256383,
+        "narHash": "sha256-Vwct8SbZkfoTY0BbB0XVmXo5KsRIH4asV7QzXpjZ4b8=",
+        "owner": "caelestia-dots",
+        "repo": "shell",
+        "rev": "58fe2962b6f515e879962953fcb4fcd9c8f39c32",
+        "type": "github"
+      },
+      "original": {
+        "owner": "caelestia-dots",
+        "repo": "shell",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -25,11 +71,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1749499854,
-        "narHash": "sha256-V1BgwiX8NjbRreU6LC2EzmuqFSQAHhoSeNlYJyZ40NE=",
+        "lastModified": 1763748372,
+        "narHash": "sha256-AUc78Qv3sWir0hvbmfXoZ7Jzq9VVL97l+sP9Jgms+JU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1df816c407d3a5090c8496c9b00170af7891f021",
+        "rev": "d10a9b16b2a3ee28433f3d1c603f4e9f1fecb8e1",
         "type": "github"
       },
       "original": {
@@ -43,11 +89,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1742563259,
-        "narHash": "sha256-OLFbGacrRFqSoqUc+pf66eb1xd0aU/crKfpiWSpJ0fw=",
+        "lastModified": 1762539883,
+        "narHash": "sha256-GvlAAIpM/iZtl/EtI+LTzEsQ2qlUkex9i4xRUZXmadM=",
         "owner": "Lxtharia",
         "repo": "minegrub-theme",
-        "rev": "b1caebbd5ab96f6afbfcd735b58fab9b9d8cf54b",
+        "rev": "2fa2012472fbfcfea17b82655dd27456fa507ee7",
         "type": "github"
       },
       "original": {
@@ -90,11 +136,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1749285348,
-        "narHash": "sha256-frdhQvPbmDYaScPFiCnfdh3B/Vh81Uuoo0w5TkWmmjU=",
+        "lastModified": 1763421233,
+        "narHash": "sha256-Stk9ZYRkGrnnpyJ4eqt9eQtdFWRRIvMxpNRf4sIegnw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3e3afe5174c561dee0df6f2c2b2236990146329f",
+        "rev": "89c2b2330e733d6cdb5eae7b899326930c2c0648",
         "type": "github"
       },
       "original": {
@@ -104,9 +150,31 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "caelestia-shell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1763210607,
+        "narHash": "sha256-gyEL9lw8oSbFbZ323vYUpIhcZLzudACEAQyCTkYh1WM=",
+        "ref": "refs/heads/master",
+        "rev": "0a7dcf30eaf438aa1ec72a9017cdb952df03f005",
+        "revCount": 704,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      }
+    },
     "root": {
       "inputs": {
         "boosteroid": "boosteroid",
+        "caelestia-shell": "caelestia-shell",
         "home-manager": "home-manager",
         "minegrub-theme": "minegrub-theme",
         "nixpkgs": "nixpkgs_3",
@@ -120,11 +188,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1748971473,
-        "narHash": "sha256-0Xh6sZI86Ops6u7wyDQlVvV+MvRRXIDb1r3sMnLNk9M=",
+        "lastModified": 1763697957,
+        "narHash": "sha256-p6CTJoeM3EK9tcqm6lgnKZFVJiGHCzcCftkko4EpEb0=",
         "owner": "youwen5",
         "repo": "zen-browser-flake",
-        "rev": "5cc269976ca876674d8ccc7f40debb61e05583ab",
+        "rev": "9eb198a4d7ea4bd1284254780e3c22533f743d55",
         "type": "github"
       },
       "original": {
