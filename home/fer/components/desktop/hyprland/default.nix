@@ -32,6 +32,10 @@ in
         sensitivity = 0;
       };
 
+      workspace = [
+        "special:magic, border:false, on-created-empty:kitty"
+      ];
+
       windowrulev2 = [
         "stayfocused, title:^()$,class:^(steam)$"
         "minsize 1 1, title:^()$,class:^(steam)$"
