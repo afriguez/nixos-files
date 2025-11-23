@@ -40,6 +40,9 @@
         "SUPER, N, togglespecialworkspace, magic"
         "SUPER SHIFT, N, movetoworkspace, special:magic"
 
+        "SUPER, COMMA, togglespecialworkspace, misc"
+        "SUPER SHIFT, COMMA, movetoworkspace, special:misc"
+
         "SUPER, 1, workspace, 1"
         "SUPER, 2, workspace, 2"
         "SUPER, 3, workspace, 3"

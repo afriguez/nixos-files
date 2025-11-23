@@ -33,7 +33,8 @@ in
       };
 
       workspace = [
-        "special:magic, border:false, on-created-empty:kitty"
+        "special:magic, border:false, on-created-empty:$terminal"
+        "special:misc, on-created-empty:anki"
       ];
 
       windowrulev2 = [
