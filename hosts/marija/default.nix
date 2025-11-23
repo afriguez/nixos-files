@@ -22,9 +22,6 @@ in
     networkmanager.enable = true;
   };
 
-  # boot.extraModulePackages = with config.boot.kernelPackages; [
-  #   v4l2loopback
-  # ];
   boot.loader.grub.minegrub-theme.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -43,8 +40,12 @@ in
     };
     displayManager = {
       sddm = {
+        package = pkgs.kdePackages.sddm;
         enable = true;
-        theme = "chili";
+        theme = "where_is_my_sddm_theme";
+        extraPackages = [
+          pkgs.qt6.qt5compat
+        ];
       };
     };
     postgresql = {
@@ -84,7 +85,6 @@ in
     };
     hyprland.enable = true;
     noisetorch.enable = true;
-    # adb.enable = true;
   };
 
   hardware = {
@@ -110,35 +110,19 @@ in
       # python3
       discord
       cmake
-      # nodejs
       elixir
-      # go
-      # cargo
       unzip
-      # gleam
       erlang
       ffmpeg-full
-      # brave
-      # obsidian
       gamescope
-      # openvpn
-      # networkmanager-openvpn
-      # networkmanagerapplet
-      # chromium
       pavucontrol
       godot_4
-      # v4l-utils
-      # droidcam
       adb-sync
-      # appimage-run
       android-tools
       scrcpy
       ripgrep
       bruno
-      # pnpm
       prismlauncher
-      # nodePackages.eas-cli
-      # nodePackages.firebase-tools
       vim
       brave
       uv
@@ -150,8 +134,9 @@ in
       tidal-hifi
       onlyoffice-desktopeditors
       elixir-ls
-      (sddm-chili-theme.override {
-        themeConfig = {
+      kdePackages.qtdeclarative
+      (where-is-my-sddm-theme.override {
+        themeConfig.General = {
           background = image;
         };
       })

@@ -1,8 +1,6 @@
 { pkgs, inputs, ... }:
 let
-  caelestia-shell = inputs.caelestia-shell.packages."x86_64-linux".default.override {
-    withCli = true;
-  };
+  quickshell = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in
 {
   imports = [
@@ -17,13 +15,8 @@ in
     swww
     rofi
     eww
-    caelestia-shell
+    quickshell
   ];
-
-  programs.quickshell = {
-    enable = true;
-    package = caelestia-shell;
-  };
 
   wayland.windowManager.hyprland = {
     enable = true;
