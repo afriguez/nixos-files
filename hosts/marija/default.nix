@@ -130,6 +130,7 @@ in
       inotify-tools
       conda
       qview
+      gcc
       python312Packages.manga-ocr
       tidal-hifi
       onlyoffice-desktopeditors
