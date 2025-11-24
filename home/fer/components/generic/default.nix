@@ -1,7 +1,8 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 let
   variant = "mocha";
   accent = "mauve";
+  marija-cursors = inputs.marija-cursors.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in
 {
   imports = [
@@ -17,6 +18,12 @@ in
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
+    };
+    pointerCursor = {
+      gtk.enable = true;
+      package = marija-cursors;
+      name = "furina";
+      size = 16;
     };
     packages = with pkgs; [
       awatcher

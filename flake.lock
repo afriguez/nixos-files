@@ -38,9 +38,27 @@
         "type": "github"
       }
     },
-    "minegrub-theme": {
+    "marija-cursors": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1764008912,
+        "narHash": "sha256-J+JFBz0pQqzjApLz1OGK7rWc/+UnDddBY0+PPURcJIU=",
+        "owner": "afriguez",
+        "repo": "marija-cursors",
+        "rev": "50c3e6af9609b44ab668583474bbc8680a46b897",
+        "type": "github"
+      },
+      "original": {
+        "owner": "afriguez",
+        "repo": "marija-cursors",
+        "type": "github"
+      }
+    },
+    "minegrub-theme": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1762539883,
@@ -74,6 +92,21 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1764005602,
+        "narHash": "sha256-YwoHJI0qCeJfdFiQPP4AXmJ+Lp1FTlJqH61URPFkxzc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "e2d5d61d2289d324b8c2c46ee68738be1cf4fac7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1689850295,
         "narHash": "sha256-fUYf6WdQlhd2H+3aR8jST5dhFH1d0eE22aes8fNIfyk=",
         "owner": "NixOS",
@@ -88,7 +121,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1763421233,
         "narHash": "sha256-Stk9ZYRkGrnnpyJ4eqt9eQtdFWRRIvMxpNRf4sIegnw=",
@@ -128,8 +161,9 @@
       "inputs": {
         "boosteroid": "boosteroid",
         "home-manager": "home-manager",
+        "marija-cursors": "marija-cursors",
         "minegrub-theme": "minegrub-theme",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_4",
         "quickshell": "quickshell",
         "zen-browser": "zen-browser"
       }

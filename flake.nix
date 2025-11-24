@@ -53,5 +53,6 @@
     boosteroid.url = "github:Adrephos/boosteroid-flake";
     quickshell.url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
     quickshell.inputs.nixpkgs.follows = "nixpkgs";
+    marija-cursors.url = "github:afriguez/marija-cursors";
   };
 }
