@@ -15,7 +15,7 @@ in
     enable = true;
     shellAliases = {
       ls = "ls -l --color=auto";
-      nnn = "nnn -d -e -H -r";
+      n = "nnn -e -H";
       cat = "bat --theme Dracula";
       ssh = "env TERM=xterm-256color ssh";
       venv = "source .venv/bin/activate.fish";
