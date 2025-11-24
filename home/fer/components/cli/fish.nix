@@ -19,9 +19,9 @@ in
       cat = "bat --theme Dracula";
       ssh = "env TERM=xterm-256color ssh";
       venv = "source .venv/bin/activate.fish";
-	  v = "nvim";
+      v = "nvim";
     };
-    plugins = [ 
+    plugins = [
       {
         name = "fish-ssh-agent";
         src = pkgs.fetchFromGitHub {

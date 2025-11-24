@@ -23,7 +23,7 @@ in
 
     settings = {
       monitor = ",preferred,auto,1";
-     # monitor = ",highrr,auto,1";
+      # monitor = ",highrr,auto,1";
       input = {
         kb_layout = "us";
         left_handed = true;

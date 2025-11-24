@@ -30,7 +30,7 @@ in
     blueman.enable = true;
     openssh = {
       enable = true;
-      ports = [22];
+      ports = [ 22 ];
       settings = {
         PasswordAuthentication = true;
       };
@@ -99,8 +99,7 @@ in
   virtualisation.docker.enable = true;
 
   nixpkgs.config.packageOverrides = pkgs: {
-    steam = pkgs.steam.override {
-    };
+    steam = pkgs.steam.override { };
   };
 
   environment = {
