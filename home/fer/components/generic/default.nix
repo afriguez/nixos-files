@@ -21,16 +21,28 @@ in
     packages = with pkgs; [
       awatcher
       nerd-fonts.jetbrains-mono
-      (catppuccin-papirus-folders.override {
+    ];
+  };
+
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = (pkgs.catppuccin-papirus-folders.override {
         accent = "${accent}";
         flavor = "${variant}";
-      })
-      (catppuccin-gtk.override {
+      });
+    };
+    theme = {
+      name = "catppuccin-mocha-mauve-standard";
+      package = (pkgs.catppuccin-gtk.override {
         accents = [ "${accent}" ];
         variant = "${variant}";
-      })
-      catppuccin-cursors.mochaDark
-    ];
+      });
+    };
+    gtk3 = {
+      extraConfig.gtk-application-prefer-dark-theme = true;
+    };
   };
 
   services = {
