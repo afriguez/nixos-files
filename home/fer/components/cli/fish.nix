@@ -15,7 +15,6 @@ in
     enable = true;
     shellAliases = {
       ls = "ls -l --color=auto";
-      n = "nnn -e -H";
       cat = "bat --theme Dracula";
       ssh = "env TERM=xterm-256color ssh";
       venv = "source .venv/bin/activate.fish";
@@ -51,5 +50,23 @@ in
 
       source /home/${config.home.username}/.env
     '';
+    functions = {
+      n = ''
+        if test -n "$NNNLVL" -a "$NNNLVL" -ge 1
+            echo "nnn is already running"
+            return
+        end
+        if test -n "$XDG_CONFIG_HOME"
+            set -x NNN_TMPFILE "$XDG_CONFIG_HOME/nnn/.lastd"
+        else
+            set -x NNN_TMPFILE "$HOME/.config/nnn/.lastd"
+        end
+        command nnn $argv
+        if test -e $NNN_TMPFILE
+            source $NNN_TMPFILE
+            rm -- $NNN_TMPFILE
+        end
+      '';
+    };
   };
 }
