@@ -79,7 +79,7 @@ in
       };
       settings = {
         shell = "fish";
-        background_opacity = "0.9";
+        background_opacity = "0.85";
         tab_bar_style = "hidden";
       };
       font = {

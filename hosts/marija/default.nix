@@ -133,7 +133,6 @@ in
       python312Packages.manga-ocr
       tidal-hifi
       onlyoffice-desktopeditors
-      elixir-ls
       kdePackages.qtdeclarative
       (where-is-my-sddm-theme.override {
         themeConfig.General = {
