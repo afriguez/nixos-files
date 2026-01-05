@@ -65,6 +65,7 @@ in
   };
 
   programs = {
+    starship.enable = true;
     home-manager.enable = true;
     git.enable = true;
 

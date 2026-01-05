@@ -19,7 +19,10 @@ in
   networking = {
     firewall.enable = false;
     hostName = "marija";
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      plugins = with pkgs; [ networkmanager-openvpn ];
+    };
   };
 
   boot.loader.grub.minegrub-theme.enable = true;
@@ -88,6 +91,7 @@ in
   };
 
   hardware = {
+    keyboard.zsa.enable = true;
     opentabletdriver.enable = true;
     graphics = {
       enable = true;
@@ -107,6 +111,7 @@ in
       inputs.boosteroid.packages.${pkgs.stdenv.hostPlatform.system}.boosteroid
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       # python3
+      keymapp
       discord
       cmake
       elixir
