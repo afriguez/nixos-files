@@ -136,6 +136,8 @@ in
       qview
       gcc
       python312Packages.manga-ocr
+      nodejs
+      protonvpn-gui
       tidal-hifi
       onlyoffice-desktopeditors
       kdePackages.qtdeclarative

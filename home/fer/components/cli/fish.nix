@@ -18,6 +18,7 @@ in
       cat = "bat --theme Dracula";
       ssh = "env TERM=xterm-256color ssh";
       venv = "source .venv/bin/activate.fish";
+      t = "pux";
       v = "nvim";
     };
     plugins = [
@@ -33,12 +34,13 @@ in
     ];
     interactiveShellInit = ''
       export PATH="$PATH:/home/fer/.dotnet/tools"
+      export PATH="$PATH:/home/fer/bin"
       set -U fish_greeting
       fish_config theme choose Rosé\ Pine\ Moon
       fish_config prompt choose astronaut
+      fish_hybrid_key_bindings
 
-      function cd
-        builtin cd $argv
+      function handle_change --on-variable PWD
         git rev-parse 2>/dev/null
         if test $status -eq 0
           if not ssh-add -l | grep -q afriguez
@@ -48,6 +50,7 @@ in
         end
       end
 
+      zoxide init --cmd cd fish | source
       source /home/${config.home.username}/.env
     '';
     functions = {

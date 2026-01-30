@@ -2,9 +2,11 @@
   imports = [
     ./git.nix
     ./fish.nix
+    ./tmux.nix
   ];
 
   home.packages = with pkgs; [
+    zoxide
     neovim
     p7zip
     htop
