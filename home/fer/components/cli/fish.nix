@@ -44,7 +44,7 @@ in
         git rev-parse 2>/dev/null
         if test $status -eq 0
           if not ssh-add -l | grep -q afriguez
-          ssh-add ~/external/ssh/id_ed25519
+            ssh-add ~/external/ssh/id_ed25519
           end
           onefetch -d dependencies authors contributors license -i /home/${config.home.username}/Downloads/Wallpaper/in_use.jpg --image-protocol kitty
         end
