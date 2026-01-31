@@ -6,10 +6,17 @@ let
     rev = "0749331afd4be6bc8035a812a20e489efe1d616f";
     hash = "sha256-hOcsGt0IMoX1a02t85qeoE381XEca0F2x0AtFNwOqj0=";
   };
+  dotfiles = pkgs.fetchFromGitHub {
+    owner = "afriguez";
+    repo = "dotfiles";
+    rev = "770f0363ba3f954a53fbfefb61d1a826137acff5";
+    hash = "sha256-sSWf++t93VFnOz0mFZnQMdL7iinSeVkn9pOEFS8+zBM=";
+  };
 in
 {
   home.file = {
     ".config/fish/themes/Rosé Pine Moon.theme".source = "${rose-pine-fish}/themes/Rosé Pine Moon.theme";
+    ".config/fastfetch/config.jsonc".source = "${dotfiles}/.config/fastfetch/config.jsonc";
   };
   programs.fish = {
     enable = true;
@@ -52,6 +59,10 @@ in
 
       zoxide init --cmd cd fish | source
       source /home/${config.home.username}/.env
+
+      if test -z "$TMUX"
+        fastfetch
+      end
     '';
     functions = {
       n = ''

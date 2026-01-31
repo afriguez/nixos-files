@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     zoxide
     neovim
+    fastfetch
     p7zip
     htop
     bat
