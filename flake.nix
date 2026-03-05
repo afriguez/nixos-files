@@ -51,8 +51,6 @@
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     boosteroid.url = "github:Adrephos/boosteroid-flake";
-    quickshell.url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-    quickshell.inputs.nixpkgs.follows = "nixpkgs";
     marija-cursors.url = "github:afriguez/marija-cursors";
   };
 }

@@ -1,4 +1,5 @@
-{ lib, ... }: {
+{ lib, ... }:
+{
   wayland.windowManager.hyprland.settings = {
     bind =
       let
@@ -64,31 +65,23 @@
         "SUPER SHIFT, 8, movetoworkspace, 8"
         "SUPER SHIFT, 9, movetoworkspace, 9"
         "SUPER SHIFT, 0, movetoworkspace, 10"
-      ] ++
-      (lib.mapAttrsToList
-        (key: direction:
-          "SUPER,${key},movefocus,${direction}"
-        )
-        directions) ++
-      (lib.mapAttrsToList
-        (key: direction:
-          "SUPER SHIFT,${key},swapwindow,${direction}"
-        )
-        directions) ++
-      (lib.mapAttrsToList
-        (key: direction:
-          "SUPER CTRL,${key},movewindoworgroup,${direction}"
-        )
-        directions) ++
-      (lib.mapAttrsToList
-        (key: direction:
-          "SUPER ALT SHIFT,${key},movecurrentworkspacetomonitor,${direction}"
-        )
-        directions);
+      ]
+      ++ (lib.mapAttrsToList (key: direction: "SUPER,${key},movefocus,${direction}") directions)
+      ++ (lib.mapAttrsToList (key: direction: "SUPER SHIFT,${key},swapwindow,${direction}") directions)
+      ++ (lib.mapAttrsToList (
+        key: direction: "SUPER CTRL,${key},movewindoworgroup,${direction}"
+      ) directions)
+      ++ (lib.mapAttrsToList (
+        key: direction: "SUPER ALT SHIFT,${key},movecurrentworkspacetomonitor,${direction}"
+      ) directions);
 
     bindm = [
       "SUPER, mouse:272, movewindow"
       "SUPER, mouse:273, resizewindow"
+    ];
+
+    bindtpel = [
+      "SUPER ALT SHIFT, underscore, sendshortcut, Ctrl_Shift, M, class:discord"
     ];
   };
 }

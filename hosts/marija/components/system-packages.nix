@@ -12,15 +12,16 @@ in
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       # python3
       keymapp
+      neovim
       discord
       cmake
       elixir
       unzip
+      flutter
       erlang
       ffmpeg-full
       gamescope
       pavucontrol
-      godot_4
       adb-sync
       android-tools
       scrcpy
@@ -38,9 +39,10 @@ in
       python312Packages.manga-ocr
       nodejs
       protonvpn-gui
-      tidal-hifi
       onlyoffice-desktopeditors
+      #nodePackages.firebase-tools
       kdePackages.qtdeclarative
+      claude-code
       (where-is-my-sddm-theme.override {
         themeConfig.General = {
           background = image;

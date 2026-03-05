@@ -1,11 +1,9 @@
 { pkgs, inputs, ... }:
-let
-  quickshell = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default;
-in
 {
   imports = [
     ./binds.nix
     ./visual.nix
+    ./winrule.nix
   ];
 
   home.packages = with pkgs; [
@@ -15,7 +13,6 @@ in
     swww
     rofi
     eww
-    quickshell
   ];
 
   wayland.windowManager.hyprland = {
@@ -34,13 +31,6 @@ in
 
       workspace = [
         "special:magic, border:false, on-created-empty:$terminal"
-        "special:misc, on-created-empty:anki"
-      ];
-
-      windowrulev2 = [
-        "stayfocused, title:^()$,class:^(steam)$"
-        "minsize 1 1, title:^()$,class:^(steam)$"
-        "float, class:^(input_window)$"
       ];
 
       exec = [
@@ -57,7 +47,7 @@ in
       "$terminal" = "kitty";
       "$menu" = "rofi -show drun -icon-theme Papirus -show-icons";
       "$sshot" = ''grim -g "$(slurp -d)" - | wl-copy -t image/png'';
-      "$music" = "youtube-music";
+      "$music" = "pear-desktop";
       "$fcitx5_toggle" = "pkill fcitx5 || fcitx5 -d --replace";
       "$show_time" = "notify-send \"$(date '+%B %d %Y')\" \"$(date '+%A, %H:%M:%S')\" -a \"Date & Time\"";
       "$sshot_temp" = ''

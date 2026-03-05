@@ -1,4 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   variant = "mocha";
   accent = "mauve";
@@ -35,17 +41,21 @@ in
     enable = true;
     iconTheme = {
       name = "Papirus-Dark";
-      package = (pkgs.catppuccin-papirus-folders.override {
-        accent = "${accent}";
-        flavor = "${variant}";
-      });
+      package = (
+        pkgs.catppuccin-papirus-folders.override {
+          accent = "${accent}";
+          flavor = "${variant}";
+        }
+      );
     };
     theme = {
       name = "catppuccin-mocha-mauve-standard";
-      package = (pkgs.catppuccin-gtk.override {
-        accents = [ "${accent}" ];
-        variant = "${variant}";
-      });
+      package = (
+        pkgs.catppuccin-gtk.override {
+          accents = [ "${accent}" ];
+          variant = "${variant}";
+        }
+      );
     };
     gtk3 = {
       extraConfig.gtk-application-prefer-dark-theme = true;
@@ -92,18 +102,6 @@ in
 
     mpv = {
       enable = true;
-
-      package = (
-        pkgs.mpv-unwrapped.wrapper {
-          scripts = with pkgs.mpvScripts; [
-            mpvacious
-          ];
-
-          mpv = pkgs.mpv-unwrapped.override {
-            waylandSupport = true;
-          };
-        }
-      );
     };
   };
 }

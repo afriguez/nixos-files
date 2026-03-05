@@ -11,10 +11,9 @@ in
     dunst
     libnotify
     transmission_4-gtk
-    youtube-music
+    pear-desktop
     anki-bin
     mplayer
-    audio-recorder
     rnote
     krita
   ];

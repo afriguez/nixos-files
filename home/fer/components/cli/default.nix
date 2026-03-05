@@ -7,14 +7,12 @@
 
   home.packages = with pkgs; [
     zoxide
-    neovim
     fastfetch
     p7zip
     htop
     bat
     socat
     jq
-    neofetch
     brightnessctl
     fzf
     onefetch
