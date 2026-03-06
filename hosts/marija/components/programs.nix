@@ -1,5 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs = {
+    niri.enable = true;
     nix-ld.enable = true;
     steam = {
       enable = true;
@@ -7,23 +9,24 @@
       dedicatedServer.openFirewall = true;
       package = pkgs.steam.override {
         extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
-        extraPkgs = pkgs: with pkgs; [
-          xorg.libXcursor
-          xorg.libXi
-          xorg.libXinerama
-          xorg.libXScrnSaver
-          libpng
-          libpulseaudio
-          libvorbis
-          stdenv.cc.cc.lib
-          libkrb5
-          keyutils
-          gamemode
-        ];
+        extraPkgs =
+          pkgs: with pkgs; [
+            xorg.libXcursor
+            xorg.libXi
+            xorg.libXinerama
+            xorg.libXScrnSaver
+            libpng
+            libpulseaudio
+            libvorbis
+            stdenv.cc.cc.lib
+            libkrb5
+            keyutils
+            gamemode
+          ];
       };
       extraCompatPackages = [ pkgs.proton-ge-bin ];
     };
-    hyprland.enable = true;
+    #hyprland.enable = true;
     noisetorch.enable = true;
   };
 }
