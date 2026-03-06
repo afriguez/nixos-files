@@ -42,7 +42,7 @@ layout {
         proportion 0.5
         proportion 0.66667
     }
-    default-column-width { proportion 0.7; }
+    default-column-width { proportion 0.9; }
     tab-indicator {
       off
     }
@@ -54,11 +54,6 @@ layout {
     background-color "transparent"
     border {
         off
-        width 4
-        active-color "#FFF"
-        inactive-color "#505050"
-
-        urgent-color "#9b0000"
     }
 }
 
@@ -72,11 +67,6 @@ prefer-no-csd
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
-}
-
-window-rule {
-    match at-startup=true app-id="kitty"
-    open-on-workspace "neo"
 }
 
 window-rule {
@@ -129,6 +119,9 @@ binds {
     Mod+Shift+J     { move-column-to-workspace-down; }
     Mod+Shift+K     { move-column-to-workspace-up; }
     Mod+Shift+L     { move-column-right; }
+
+    Mod+Shift+U     { move-workspace-down; }
+    Mod+Shift+I     { move-workspace-up; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
