@@ -41,6 +41,7 @@ in
       protonvpn-gui
       onlyoffice-desktopeditors
       #nodePackages.firebase-tools
+      firebase-tools
       kdePackages.qtdeclarative
       claude-code
       (where-is-my-sddm-theme.override {

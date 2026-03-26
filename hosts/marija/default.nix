@@ -1,4 +1,9 @@
-{ pkgs, inputs, outputs, ... }:
+{
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -14,6 +19,10 @@
   boot.loader.grub.minegrub-theme.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   virtualisation.docker.enable = true;
+
+  nixpkgs.overlays = [
+    (import ./components/firebase-tools.nix)
+  ];
 
   system.stateVersion = "23.11";
 }
