@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   outputs,
+  config,
   ...
 }:
 {
@@ -18,6 +19,10 @@
 
   boot.loader.grub.minegrub-theme.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    v4l2loopback
+  ];
+  boot.kernelModules = [ "v4l2loopback" ];
   virtualisation.docker.enable = true;
 
   nixpkgs.overlays = [

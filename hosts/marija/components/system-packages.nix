@@ -17,16 +17,20 @@ in
       cmake
       elixir
       unzip
-      flutter
-      erlang
+      #flutter
+      #erlang
       ffmpeg-full
+      libva-utils
       gamescope
       pavucontrol
+      v4l-utils
+      droidcam
       adb-sync
       android-tools
       scrcpy
       ripgrep
-      bruno
+      #bruno
+      #audacity
       prismlauncher
       vim
       brave
@@ -39,9 +43,13 @@ in
       python312Packages.manga-ocr
       nodejs
       protonvpn-gui
-      onlyoffice-desktopeditors
+      busybox
+      #onlyoffice-desktopeditors
       #nodePackages.firebase-tools
       firebase-tools
+      #codex
+      bubblewrap
+      gh
       kdePackages.qtdeclarative
       claude-code
       (where-is-my-sddm-theme.override {

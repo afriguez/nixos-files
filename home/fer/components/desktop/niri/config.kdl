@@ -211,9 +211,11 @@ binds {
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
 
+    Print { screenshot-screen; }
+    Alt+Print { screenshot; }
     Mod+Shift+S { screenshot; }
-    Mod+Shift+Ctrl+S { screenshot-screen; }
     Mod+Shift+Ctrl+Alt+S { screenshot-window; }
+    Mod+D { spawn-sh "~/bin/yomigrep-ocr -c"; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Q { quit; }

@@ -21,6 +21,7 @@ in
   programs.fish = {
     enable = true;
     shellAliases = {
+      codex = "npx @openai/codex@latest";
       ls = "ls -l --color=auto";
       cat = "bat --theme Dracula";
       ssh = "env TERM=xterm-256color ssh";

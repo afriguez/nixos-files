@@ -21,6 +21,7 @@
     feh
     ripgrep
     w3m
+    hyprshot
     (nnn.override { withNerdIcons = true; })
   ];
 }
