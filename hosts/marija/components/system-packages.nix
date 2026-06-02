@@ -7,6 +7,7 @@ let
 in
 {
   environment = {
+    homeBinInPath = true; 
     systemPackages = with pkgs; [
       inputs.boosteroid.packages.${pkgs.stdenv.hostPlatform.system}.boosteroid
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default

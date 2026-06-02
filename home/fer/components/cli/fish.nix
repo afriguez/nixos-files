@@ -42,7 +42,6 @@ in
     ];
     interactiveShellInit = ''
       export PATH="$PATH:/home/fer/.dotnet/tools"
-      export PATH="$PATH:/home/fer/bin"
       set -U fish_greeting
       fish_config theme choose Rosé\ Pine\ Moon
       fish_config prompt choose astronaut
