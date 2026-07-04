@@ -53,6 +53,7 @@ in
       gh
       kdePackages.qtdeclarative
       claude-code
+      reco
       (where-is-my-sddm-theme.override {
         themeConfig.General = {
           background = image;
