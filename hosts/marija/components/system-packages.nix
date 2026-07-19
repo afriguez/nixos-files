@@ -21,11 +21,6 @@ in
       libva-utils
       gamescope
       pavucontrol
-      v4l-utils
-      droidcam
-      adb-sync
-      android-tools
-      scrcpy
       ripgrep
       prismlauncher
       vim
@@ -39,7 +34,6 @@ in
       nodejs
       protonvpn-gui
       busybox
-      firebase-tools
       bubblewrap
       gh
       kdePackages.qtdeclarative
