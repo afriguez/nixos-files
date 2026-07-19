@@ -10,16 +10,12 @@ in
     homeBinInPath = true; 
     systemPackages = with pkgs; [
       inputs.boosteroid.packages.${pkgs.stdenv.hostPlatform.system}.boosteroid
-      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-      # python3
       keymapp
       neovim
       discord
       cmake
       elixir
       unzip
-      #flutter
-      #erlang
       ffmpeg-full
       libva-utils
       gamescope
@@ -30,29 +26,21 @@ in
       android-tools
       scrcpy
       ripgrep
-      #bruno
-      #audacity
       prismlauncher
       vim
       brave
       uv
       luarocks-nix
       inotify-tools
-      conda
-      qview
       gcc
       python312Packages.manga-ocr
       nodejs
       protonvpn-gui
       busybox
-      #onlyoffice-desktopeditors
-      #nodePackages.firebase-tools
       firebase-tools
-      #codex
       bubblewrap
       gh
       kdePackages.qtdeclarative
-      claude-code
       reco
       (where-is-my-sddm-theme.override {
         themeConfig.General = {

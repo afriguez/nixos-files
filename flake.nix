@@ -48,8 +48,6 @@
     };
 
     minegrub-theme.url = "github:Lxtharia/minegrub-theme";
-    zen-browser.url = "github:youwen5/zen-browser-flake";
-    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     boosteroid.url = "github:Adrephos/boosteroid-flake";
     marija-cursors.url = "github:afriguez/marija-cursors";
   };
