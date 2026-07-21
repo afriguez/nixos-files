@@ -27,6 +27,12 @@
       options = [ "fmask=0022" "dmask=0022"];
     };
 
+  fileSystems."/home/fer/data" =
+    {
+      device = "/dev/disk/by-label/DATA";
+      fsType = "ext4";
+    };
+
   swapDevices = [{
     device = "/dev/disk/by-label/NIXSWAP";
   }];

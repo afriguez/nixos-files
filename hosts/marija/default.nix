@@ -21,9 +21,5 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   virtualisation.docker.enable = true;
 
-  nixpkgs.overlays = [
-    (import ./components/firebase-tools.nix)
-  ];
-
   system.stateVersion = "26.05";
 }
