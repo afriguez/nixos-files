@@ -51,5 +51,6 @@
     boosteroid.url = "github:Adrephos/boosteroid-flake";
     marija-cursors.url = "github:afriguez/marija-cursors";
     linux-wallpaper-engine.url = "github:jagrat7/linux-wallpaper-engine";
+    gamesentenceminer.url = "gitlab:afriguez/gsm-flake";
   };
 }
