@@ -33,6 +33,12 @@
       fsType = "ext4";
     };
 
+  fileSystems."/home/fer/external" =
+    {
+      device = "/dev/disk/by-uuid/B00EAE6E-929A-11EB-A090-C85B761AEE83";
+      fsType = "ext4";
+    };
+
   swapDevices = [{
     device = "/dev/disk/by-label/NIXSWAP";
   }];
