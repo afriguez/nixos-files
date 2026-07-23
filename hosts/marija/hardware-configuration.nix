@@ -35,7 +35,7 @@
 
   fileSystems."/home/fer/external" =
     {
-      device = "/dev/disk/by-uuid/B00EAE6E-929A-11EB-A090-C85B761AEE83";
+      device = "/dev/disk/by-uuid/034cbfea-a2e6-4d03-ac93-48a1cf4bc545";
       fsType = "ext4";
     };
 
