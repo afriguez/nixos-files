@@ -10,8 +10,8 @@ in
     homeBinInPath = true; 
     systemPackages = with pkgs; [
       inputs.boosteroid.packages.${pkgs.stdenv.hostPlatform.system}.boosteroid
-      inputs.linux-wallpaper-engine.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.gamesentenceminer.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default
       keymapp
       neovim
       discord
@@ -31,7 +31,6 @@ in
       inotify-tools
       gcc
       python312Packages.manga-ocr
-      linux-wallpaperengine
       nodejs
       protonvpn-gui
       busybox
