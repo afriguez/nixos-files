@@ -6,6 +6,9 @@ spawn-sh-at-startup "swww-daemon --format xrgb && swww img ~/Downloads/Wallpaper
 spawn-sh-at-startup "fcitx5-remote -r"
 spawn-sh-at-startup "fcitx5 -d --replace"
 spawn-sh-at-startup "fcitx5-remote -r"
+spawn-sh-at-startup "sleep 5; start-manga-ocr"
+spawn-sh-at-startup "discord"
+spawn-sh-at-startup "pear-desktop"
 
 input {
     touchpad {
