@@ -21,6 +21,7 @@ in
       libva-utils
       gamescope
       pavucontrol
+      pulseaudio
       ripgrep
       prismlauncher
       vim
@@ -34,7 +35,6 @@ in
       protonvpn-gui
       busybox
       bubblewrap
-      gh
       kdePackages.qtdeclarative
       reco
       (where-is-my-sddm-theme.override {

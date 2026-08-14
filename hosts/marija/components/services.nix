@@ -2,7 +2,6 @@
   services = {
     hardware.openrgb.enable = true;
     gnome.gnome-keyring.enable = true;
-    blueman.enable = true;
     openssh = {
       enable = true;
       ports = [ 22 ];

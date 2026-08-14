@@ -11,7 +11,6 @@
         libva-utils
       ];
     };
-    bluetooth.enable = true;
     xone.enable = true;
   };
 }
