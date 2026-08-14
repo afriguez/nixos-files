@@ -62,18 +62,6 @@ in
     };
   };
 
-  services = {
-    activitywatch = {
-      enable = true;
-      watchers = {
-        awatcher = {
-          package = pkgs.awatcher;
-          executable = "awatcher";
-        };
-      };
-    };
-  };
-
   programs = {
     starship.enable = true;
     home-manager.enable = true;
