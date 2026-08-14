@@ -2,7 +2,7 @@ workspace "neo" {
   open-on-output "HDMI-A-1"
 }
 
-spawn-sh-at-startup "swww-daemon --format xrgb && swww img ~/Downloads/Wallpaper/in_use.jpg"
+spawn-sh-at-startup "awww-daemon --format xrgb && awww img ~/Downloads/Wallpaper/in_use.jpg"
 spawn-sh-at-startup "fcitx5-remote -r"
 spawn-sh-at-startup "fcitx5 -d --replace"
 spawn-sh-at-startup "fcitx5-remote -r"
@@ -83,7 +83,7 @@ window-rule {
 }
 
 layer-rule {
-    match namespace="^swww-daemon$"
+    match namespace="^awww-daemon$"
     place-within-backdrop true
 }
 

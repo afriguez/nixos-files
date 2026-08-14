@@ -34,14 +34,14 @@
       mplayer
       pear-desktop
       prismlauncher
-      protonvpn-gui
+      proton-vpn
       reco
       rnote
       transmission_4-gtk
 
       # Development and media tools
       cmake
-      elixir
+      beamPackages.elixir
       ffmpeg-full
       gcc
       gamescope

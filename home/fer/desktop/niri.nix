@@ -5,7 +5,7 @@
     playerctl
     rofi
     slurp
-    swww
+    awww
     wl-clipboard
     xwayland-satellite
   ];

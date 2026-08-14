@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   pkgs,
   ...
@@ -10,6 +11,7 @@ in {
   fonts.fontconfig.enable = true;
 
   home.pointerCursor = {
+    enable = true;
     gtk.enable = true;
     package = marija-cursors;
     name = "furina";
@@ -36,5 +38,6 @@ in {
     };
 
     gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
+    gtk4.theme = config.gtk.theme;
   };
 }
