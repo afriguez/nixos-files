@@ -17,7 +17,7 @@
     neovim
     pipewire
     procps
-    python312Packages.manga-ocr
+    python3Packages.manga-ocr
     tmux
     wireplumber
     wl-clipboard
