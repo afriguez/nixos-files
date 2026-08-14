@@ -1,0 +1,105 @@
+* {
+    font:"JetBrainsMono 12";
+
+    bg0:    #1e2030;
+    bg1:    #7E7E7E80;
+    bg2:    #c6a0f6;
+
+    fg0:    #1e2030;
+    fg1:    #b8c0e0;
+
+    background-color:    transparent;
+    text-color:            #FFFFFF;
+}
+
+window {
+    location:            center;
+
+    width:                640;
+    padding:            20;
+
+    border:                2;
+    border-color:        @bg2;
+    border-radius:        8;
+
+    background-color:    @bg0;
+}
+
+inputbar {
+    enabled:            true;
+    orientation:        horizontal;
+
+    font:                "JetBrainsMono 14";
+    spacing:            10;
+    padding:            50 100;
+
+    background-color:    transparent;
+    background-image:    url("~/Downloads/Wallpaper/n_interlude_64.png", width);
+
+    border:                2;
+    border-color:        @bg2;
+    border-radius:        8;
+
+    children:            [ entry ];
+}
+
+entry, element-text {
+    vertical-align:    0.5;
+}
+
+entry {
+    padding:            5 10;
+
+    placeholder:        "Search";
+    placeholder-color:    @fg1;
+
+    background-color:    @bg0;
+
+    border:                2;
+    border-color:        @bg2;
+    border-radius:        8;
+}
+
+message {
+    border:                2 0 0;
+    border-color:        @bg1;
+    background-color:    @bg1;
+}
+
+textbox {
+    padding:    5 5;
+}
+
+listview {
+    lines:            10;
+    columns:        1;
+    padding:        20 0 0 0;
+
+    border:            1 0 0;
+    border-color:    @bg1;
+
+    fixed-height:   false;
+}
+
+element {
+    padding:            8 16;
+    spacing:            16;
+    background-color:    transparent;
+}
+
+element normal active {
+    text-color:    @bg2;
+}
+
+element selected normal, element selected active {
+    text-color:            @fg0;
+    background-color:    @bg2;
+
+    border:                2;
+    border-color:        @bg2;
+    border-radius:        8;
+}
+
+element-text {
+    text-color:    inherit;
+}
