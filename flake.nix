@@ -48,7 +48,6 @@
     };
 
     minegrub-theme.url = "github:Lxtharia/minegrub-theme";
-    boosteroid.url = "github:Adrephos/boosteroid-flake";
     marija-cursors.url = "github:afriguez/marija-cursors";
     gamesentenceminer.url = "gitlab:afriguez/gsm-flake";
     herdr.url = "github:herdrdev/herdr";

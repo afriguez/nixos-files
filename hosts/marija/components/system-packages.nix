@@ -9,7 +9,6 @@ in
   environment = {
     homeBinInPath = true; 
     systemPackages = with pkgs; [
-      inputs.boosteroid.packages.${pkgs.stdenv.hostPlatform.system}.boosteroid
       inputs.gamesentenceminer.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default
       keymapp
