@@ -43,6 +43,22 @@
       "keyColor": "magenta"
     },
     {
+      "type": "cpu",
+      "key": "CPU",
+      "showPeCoreCount": true,
+      "keyColor": "magenta"
+    },
+    {
+      "type": "gpu",
+      "key": "GPU",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "memory",
+      "key": "Memory",
+      "keyColor": "magenta"
+    },
+    {
       "type": "uptime",
       "key": "Uptime",
       "keyColor": "magenta"
