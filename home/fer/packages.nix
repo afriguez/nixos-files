@@ -26,7 +26,7 @@
       anki-bin
       awatcher
       brave
-      discord
+      vesktop
       dunst
       keymapp
       krita
