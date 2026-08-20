@@ -1,5 +1,6 @@
 {lib, ...}: {
   services = {
+    blueman.enable = true;
     hardware.openrgb.enable = true;
 
     openssh = {
