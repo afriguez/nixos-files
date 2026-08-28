@@ -1,9 +1,9 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nixos
+    ../../modules/server
   ];
 
-  networking.hostName = "marija";
+  networking.hostName = "buro";
   system.stateVersion = "26.05";
 }

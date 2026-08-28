@@ -16,6 +16,11 @@
         specialArgs = {inherit inputs outputs;};
         modules = [./hosts/marija minegrub-theme.nixosModules.default];
       };
+
+      buro = lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./hosts/buro];
+      };
     };
 
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;

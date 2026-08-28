@@ -1,11 +1,8 @@
 {pkgs, ...}: {
-  networking = {
-    hostName = "marija";
-    firewall.enable = false;
+  imports = [../shared/networking.nix];
 
-    networkmanager = {
-      enable = true;
-      plugins = [pkgs.networkmanager-openvpn];
-    };
+  networking = {
+    firewall.enable = false;
+    networkmanager.plugins = [pkgs.networkmanager-openvpn];
   };
 }
