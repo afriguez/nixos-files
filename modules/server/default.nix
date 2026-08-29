@@ -5,6 +5,8 @@
     ./users.nix
     ../services/docker.nix
     ../services/openssh.nix
+    ../services/kavita.nix
+    ../services/uptime-kuma.nix
   ];
 
   hardware.enableRedistributableFirmware = true;
