@@ -5,7 +5,6 @@
     ./users.nix
     ../services/docker.nix
     ../services/openssh.nix
-    ../services/thermald.nix
     ../services/uptime-kuma.nix
   ];
 
