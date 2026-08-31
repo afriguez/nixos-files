@@ -10,8 +10,11 @@
     tmux
     tree
     unzip
+    nodejs
     wget
   ];
+
+  environment.shellAliases.codex = "npx @openai/codex@latest";
 
   programs = {
     bash.completion.enable = true;
