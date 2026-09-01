@@ -1,4 +1,4 @@
-{
+{ lib, ... }: {
   postgresql = {
     enable = true;
     authentication = lib.mkOverride 10 ''
