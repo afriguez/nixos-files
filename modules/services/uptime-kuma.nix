@@ -2,12 +2,9 @@
   services.uptime-kuma = {
     enable = true;
     settings = {
+      HOST = "0.0.0.0";
       PORT = "3001";
-      UPTIME_KUMA_DB_HOSTNAME = "localhost";
-      UPTIME_KUMA_DB_NAME = "uptime-kuma";
-      UPTIME_KUMA_DB_PASSWORD = "";
-      UPTIME_KUMA_DB_TYPE = "postgresql";
-      UPTIME_KUMA_DB_USERNAME = "postresql";
+      UPTIME_KUMA_DB_TYPE = "sqlite";
     };
   };
 }
