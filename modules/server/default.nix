@@ -10,6 +10,7 @@
     ../services/jellyfin.nix
     ../services/calibre-web.nix
     ../services/vaultwarden.nix
+    ../services/postgresql.nix
   ];
 
   hardware.enableRedistributableFirmware = true;
