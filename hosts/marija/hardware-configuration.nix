@@ -27,12 +27,6 @@
       options = [ "fmask=0022" "dmask=0022"];
     };
 
-  fileSystems."/home/fer/external" =
-    {
-      device = "/dev/disk/by-uuid/034cbfea-a2e6-4d03-ac93-48a1cf4bc545";
-      fsType = "ext4";
-    };
-
   swapDevices = [{
     device = "/dev/disk/by-label/NIXSWAP";
   }];
