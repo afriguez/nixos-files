@@ -12,6 +12,8 @@
     unzip
     nodejs
     wget
+    wireguard-tools
+    libnatpmp
   ];
 
   environment.shellAliases.codex = "npx @openai/codex@latest";
