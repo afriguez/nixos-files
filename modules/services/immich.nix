@@ -5,7 +5,7 @@
       enable = true;
       host = "0.0.0.0";
       openFirewall = true;
-      mediaLocation = "/srv/storage/server/immich"
+      mediaLocation = "/srv/storage/server/immich";
     };
   };
 
