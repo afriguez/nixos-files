@@ -7,4 +7,6 @@
       port = 8083;
     };
   };
+
+  systemd.services.calibre-web.serviceConfig.SupplementaryGroups = [ "media" ];
 }
