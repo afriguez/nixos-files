@@ -1,6 +1,5 @@
 {
-  networking.wg-quick.interfaces = {
+  networking.wg-quick.interfaces.proton = {
     configFile = "/etc/wireguard/proton.conf";
-    autostart = true;
   };
 }
