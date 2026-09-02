@@ -1,13 +1,14 @@
 { config, pkgs, ... }:
+
 let
   protonPortForward = pkgs.writeShellScript "proton-port-forward" ''
-    set -euo pipefail
+    set -uo pipefail
 
     GATEWAY="10.2.0.1"
     QB_URL="http://127.0.0.1:8080"
 
-    COOKIE_JAR="$(mktemp)"
-    trap 'rm -f "$COOKIE_JAR"' EXIT
+    COOKIE_JAR="$(${pkgs.coreutils}/bin/mktemp)"
+    trap '${pkgs.coreutils}/bin/rm -f "$COOKIE_JAR"' EXIT
 
     login_qbittorrent() {
       ${pkgs.curl}/bin/curl \
@@ -25,6 +26,11 @@ let
 
       echo "Setting qBittorrent listening port to $PORT"
 
+      login_qbittorrent || {
+        echo "qBittorrent login failed"
+        return 1
+      }
+
       ${pkgs.curl}/bin/curl \
         --silent \
         --show-error \
@@ -35,21 +41,35 @@ let
         "$QB_URL/api/v2/app/setPreferences" >/dev/null
     }
 
-    until ${pkgs.libnatpmp}/bin/natpmpc -g "$GATEWAY" >/dev/null 2>&1; do
-      echo "Waiting for Proton NAT-PMP gateway..."
-      sleep 5
+    echo "Waiting for Proton NAT-PMP gateway..."
+
+    until ${pkgs.libnatpmp}/bin/natpmpc \
+      -g "$GATEWAY" >/dev/null 2>&1
+    do
+      ${pkgs.coreutils}/bin/sleep 5
     done
 
-    login_qbittorrent
+    echo "Proton NAT-PMP gateway reachable"
 
     CURRENT_PORT=""
 
     while true; do
+      echo "Refreshing Proton port mapping..."
+
       UDP_OUTPUT="$(
         ${pkgs.libnatpmp}/bin/natpmpc \
           -a 1 0 udp 60 \
-          -g "$GATEWAY"
+          -g "$GATEWAY" 2>&1
       )"
+
+      UDP_STATUS=$?
+
+      if [ "$UDP_STATUS" -ne 0 ]; then
+        echo "UDP NAT-PMP request failed:"
+        echo "$UDP_OUTPUT"
+        ${pkgs.coreutils}/bin/sleep 5
+        continue
+      fi
 
       PORT="$(
         printf '%s\n' "$UDP_OUTPUT" |
@@ -58,24 +78,39 @@ let
       )"
 
       if [ -z "$PORT" ]; then
-        echo "Could not determine Proton forwarded port."
+        echo "Could not parse forwarded port:"
         echo "$UDP_OUTPUT"
-        exit 1
+        ${pkgs.coreutils}/bin/sleep 5
+        continue
       fi
 
-      ${pkgs.libnatpmp}/bin/natpmpc \
-        -a 1 0 tcp 60 \
-        -g "$GATEWAY" >/dev/null
+      TCP_OUTPUT="$(
+        ${pkgs.libnatpmp}/bin/natpmpc \
+          -a 1 0 tcp 60 \
+          -g "$GATEWAY" 2>&1
+      )"
+
+      TCP_STATUS=$?
+
+      if [ "$TCP_STATUS" -ne 0 ]; then
+        echo "TCP NAT-PMP request failed:"
+        echo "$TCP_OUTPUT"
+        ${pkgs.coreutils}/bin/sleep 5
+        continue
+      fi
+
+      echo "NAT-PMP lease refreshed: port $PORT"
 
       if [ "$PORT" != "$CURRENT_PORT" ]; then
-        login_qbittorrent
-        set_qbittorrent_port "$PORT"
-
-        CURRENT_PORT="$PORT"
-        echo "Proton forwarded port is now $PORT"
+        if set_qbittorrent_port "$PORT"; then
+          CURRENT_PORT="$PORT"
+          echo "qBittorrent updated to port $PORT"
+        else
+          echo "Failed to update qBittorrent; will retry next cycle"
+        fi
       fi
 
-      sleep 45
+      ${pkgs.coreutils}/bin/sleep 45
     done
   '';
 in
