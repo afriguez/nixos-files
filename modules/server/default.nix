@@ -10,6 +10,7 @@
     ../services/jellyfin.nix
     ../services/calibre-web.nix
     ../services/qbittorrent.nix
+    ../services/proton-port-forwarding.nix
   ];
 
   hardware.enableRedistributableFirmware = true;
