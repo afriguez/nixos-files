@@ -3,12 +3,14 @@
     pkgs.writeShellScriptBin name
     (builtins.readFile ../../scripts/${name});
 
-  scripts = map mkScript [
+  yomigrep = pkgs.callPackage ../../pkgs/yomigrep.nix { };
+
+  scripts = (map mkScript [
     "pux"
     "start-manga-ocr"
     "toggle-mic"
     "yomigrep-ocr"
-  ];
+  ]) ++ [ yomigrep ];
 
   scriptDependencies = with pkgs; [
     gnugrep
