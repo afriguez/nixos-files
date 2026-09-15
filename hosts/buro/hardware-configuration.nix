@@ -34,6 +34,20 @@
       options = [ "nofail" "x-systemd.device-timeout=10s"];
     };
 
+  fileSystems."/srv/extra" =
+    {
+      device = "/dev/disk/3a617694-d8fd-4dd7-a9e9-e0d5a77c77f9";
+      fsType = "ext4";
+      options = [ "nofail" "x-systemd.device-timeout=10s"];
+    };
+
+  fileSystems."/srv/bulk" =
+    {
+      device = "/dev/disk/by-uuid/0ca77a6c-5b45-456f-b798-b093a2235b70";
+      fsType = "ext4";
+      options = [ "nofail" "x-systemd.device-timeout=10s"];
+    };
+
   swapDevices = [{
     device = "/dev/disk/by-label/NIXSWAP";
   }];
