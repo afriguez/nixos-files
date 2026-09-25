@@ -70,5 +70,6 @@
       inputs.gamesentenceminer.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.veadotube.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.gamesentenceminer.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 }

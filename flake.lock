@@ -24,11 +24,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1788910531,
-        "narHash": "sha256-IfO2SVreHPRwWmRMR2mgd1ffuP67TxLsR7YrcC4z/EU=",
+        "lastModified": 1790355894,
+        "narHash": "sha256-aLdJ6KQFXYGwYAto4KHKOAxzaRzoGV7XlUPpHTn3TV4=",
         "owner": "herdrdev",
         "repo": "herdr",
-        "rev": "b9ce96869e89937278d673d70ae4c135dd318469",
+        "rev": "21d0ce60267ad947c081d3d3fba401c859f06dd2",
         "type": "github"
       },
       "original": {
@@ -44,11 +44,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788921139,
-        "narHash": "sha256-2wRuvf9UDw1SYWtBcxNmxLeAtNU1i/hc1c0AKQHdvlM=",
+        "lastModified": 1790359331,
+        "narHash": "sha256-Obs1m3Rs5rTEWjZlOLSJYYAv7nEqQgogSMgWtOv8JBI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a2dbe7c2c9333e8234ae8114c7f731784201d108",
+        "rev": "6fa0edfe6a025d4d98f44a6c0d704d690dce3378",
         "type": "github"
       },
       "original": {
@@ -80,11 +80,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1787822983,
-        "narHash": "sha256-wusELfq9vxbkbZy8cPprcOldqoqSbKltxt++EW9gQ9g=",
+        "lastModified": 1790090837,
+        "narHash": "sha256-2qP9aYUmFTmMYenLfbfYJ8P+XUGJYJFDdbQBheasr8k=",
         "owner": "Lxtharia",
         "repo": "minegrub-theme",
-        "rev": "89f9e24f44cbe06b11d69068e39f534666e4d3d3",
+        "rev": "142f67baed783b4f6774f316476f46ff7ab1823a",
         "type": "github"
       },
       "original": {
@@ -127,11 +127,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1788957126,
-        "narHash": "sha256-Iw0REW/v7XMV4EHpizbepti7W0AHNoWawe0vXp9Nyxc=",
+        "lastModified": 1790362542,
+        "narHash": "sha256-ZzovWP2B8Rsdis/qZ4WL28p2GU4I1ogwUIdBdqXOQWE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "04d294a46080bab12cb340e8a1d7f8283768b91b",
+        "rev": "8b19eae13da4b3973e8b1471022068463869204a",
         "type": "github"
       },
       "original": {
@@ -158,15 +158,31 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1788881743,
-        "narHash": "sha256-2V9GZGvPfrNzxFozhI9dcqV+c3QdA8YZrvAAzqEB+dI=",
+        "lastModified": 1790185690,
+        "narHash": "sha256-xJ+X4hBtOcAFGBOe5nAMyMUeF9foJBmIOu3NjBqBycU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d6524aaca2ff07876657ae2b323f24be4874944b",
+        "rev": "4975466d324710c576dc11ad614684e6bd8cad8e",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_6": {
+      "locked": {
+        "lastModified": 1786384358,
+        "narHash": "sha256-RzPPiWeUtuvymnpuEWsdtzli5w4kjZs49FqEs3/1u+I=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2fcb964de67fcf60b43471c55d5d99e61a9ccb5a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -179,7 +195,8 @@
         "home-manager": "home-manager",
         "marija-cursors": "marija-cursors",
         "minegrub-theme": "minegrub-theme",
-        "nixpkgs": "nixpkgs_5"
+        "nixpkgs": "nixpkgs_5",
+        "veadotube": "veadotube"
       }
     },
     "rust-overlay": {
@@ -200,6 +217,24 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "veadotube": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "lastModified": 1786558587,
+        "narHash": "sha256-Z/GLFFle82xVUwDsUd+QELrqMgTSZZwk3YSQMfv4RUE=",
+        "owner": "AugustoMegener",
+        "repo": "veadotube-mini-flake",
+        "rev": "59b078fb37355b0f4eecac5048e3f38f37b22015",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AugustoMegener",
+        "repo": "veadotube-mini-flake",
         "type": "github"
       }
     }
