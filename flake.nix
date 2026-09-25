@@ -38,5 +38,6 @@
     marija-cursors.url = "github:afriguez/marija-cursors";
     gamesentenceminer.url = "gitlab:afriguez/gsm-flake";
     herdr.url = "github:herdrdev/herdr";
+    veadotube.url = "github:AugustoMegener/veadotube-mini-flake";
   };
 }
