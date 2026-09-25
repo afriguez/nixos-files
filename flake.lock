@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1784720509,
-        "narHash": "sha256-t6GJB7cD5ALoVpmSUcXX8PmZktdLsU0E/Fdwrd3ydCo=",
+        "lastModified": 1790364564,
+        "narHash": "sha256-+yeyZk+VQVs5D/50SdbSSIxyAmpnNWI9HnFv13Umg4k=",
         "owner": "afriguez",
         "repo": "gsm-flake",
-        "rev": "f18540e5dad248f62d8a8813f2f0d1c4a3813d7d",
+        "rev": "ee14792719ca676ef8131bc99e121faff7a8405d",
         "type": "gitlab"
       },
       "original": {
@@ -127,11 +127,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1790362542,
-        "narHash": "sha256-ZzovWP2B8Rsdis/qZ4WL28p2GU4I1ogwUIdBdqXOQWE=",
+        "lastModified": 1790363733,
+        "narHash": "sha256-4louHB4/hMl+hg8Q7GCo94eQIdF6RJc7uIbDDMdo0Tg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8b19eae13da4b3973e8b1471022068463869204a",
+        "rev": "142a100376a96e76d6e2c53bf563f68ee9e82854",
         "type": "github"
       },
       "original": {

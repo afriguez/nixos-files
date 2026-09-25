@@ -4,6 +4,7 @@
     ./git.nix
     ./kitty.nix
     ./tmux.nix
+    ./obs.nix
   ];
 
   programs = {
