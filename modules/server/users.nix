@@ -14,4 +14,5 @@
   users.users.calibre-web.extraGroups = [ "media" ];
   users.users.jellyfin.extraGroups = [ "media" "video" "render" ];
   users.users.qbittorrent.extraGroups = [ "media" ];
+  users.users.paperless.extraGroups = [ "media"];
 }
