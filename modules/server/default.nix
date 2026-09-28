@@ -11,6 +11,7 @@
     ../services/calibre-web.nix
     ../services/qbittorrent.nix
     ../services/proton-port-forwarding.nix
+    ../services/paperless.nix
   ];
 
   hardware.enableRedistributableFirmware = true;
