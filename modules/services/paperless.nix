@@ -13,5 +13,5 @@
         pdfa_image_compression = "lossless";
       };
     };
-  }
+  };
 }
