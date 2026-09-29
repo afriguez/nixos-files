@@ -12,6 +12,7 @@
     ../services/qbittorrent.nix
     ../services/proton-port-forwarding.nix
     ../services/paperless.nix
+    ../services/navidrome.nix
   ];
 
   hardware.enableRedistributableFirmware = true;
