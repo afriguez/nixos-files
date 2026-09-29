@@ -2,7 +2,7 @@
   services.navidrome = {
     enable = true;
     openFirewall = true;
-    plugins = with pkgs.navidromePlugins; [
+    plugins = with pkgs.pkgsCross.wasi32.navidromePlugins; [
       listenbrainz-daily-playlist
       lyrics-plugin
     ];
