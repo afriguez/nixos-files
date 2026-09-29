@@ -8,8 +8,8 @@
       lyrics-plugin
     ];
     settings = {
-      MusicFolder = "/srv/bulk/server/navidrome/music"
-      PlaylistsPath = "/srv/bulk/server/navidrome/playlists"
+      MusicFolder = "/srv/bulk/server/navidrome/music";
+      PlaylistsPath = "/srv/bulk/server/navidrome/playlists";
     };
   };
 }
