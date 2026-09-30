@@ -23,7 +23,6 @@
       (nnn.override {withNerdIcons = true;})
 
       # Desktop applications
-      anki-bin
       awatcher
       brave
       vesktop
@@ -71,5 +70,6 @@
       inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.veadotube.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.gamesentenceminer.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.anki-flake.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 }
