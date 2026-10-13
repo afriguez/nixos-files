@@ -4,6 +4,7 @@
     ./packages.nix
     ./users.nix
     ./networking.nix
+    ./power.nix
     ../services/docker.nix
     ../services/openssh.nix
     ../services/immich.nix
