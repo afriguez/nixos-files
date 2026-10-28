@@ -23,6 +23,6 @@ test host="marija":
 switch host="marija":
     nh os switch . -H {{host}}
 
-# Refresh all flake inputs. Review flake.lock, then run check and build.
-update:
-    nix flake update
+# Refresh flake inputs. Review flake.lock, then run check and build.
+update input="":
+    nix flake update {{ input }}
