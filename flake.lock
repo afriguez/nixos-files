@@ -23,11 +23,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1790364564,
-        "narHash": "sha256-+yeyZk+VQVs5D/50SdbSSIxyAmpnNWI9HnFv13Umg4k=",
+        "lastModified": 1793108309,
+        "narHash": "sha256-gwHUXZEGKRe1L8HF+5H/7PNJZvBgzU/WP2/UpgvXPu8=",
         "owner": "afriguez",
         "repo": "gsm-flake",
-        "rev": "ee14792719ca676ef8131bc99e121faff7a8405d",
+        "rev": "82783fe6df2fa8df570e46d01b91936d3739fe4f",
         "type": "gitlab"
       },
       "original": {

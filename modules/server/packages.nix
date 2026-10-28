@@ -14,6 +14,7 @@
     wget
     wireguard-tools
     libnatpmp
+    vim
   ];
 
   environment.shellAliases.codex = "npx @openai/codex@latest";
