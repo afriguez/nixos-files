@@ -21,7 +21,7 @@
       if ! "$IP" -4 rule show |
            "$GREP" -Eq '^[[:space:]]*100:.*from 172\.30\.50\.10(/32)? lookup main'; then
         "$IP" -4 rule add \
-          priority 100 \
+          priority 90 \
           from 172.30.50.10/32 \
           lookup main
       fi
@@ -29,7 +29,7 @@
       if ! "$IP" -4 rule show |
            "$GREP" -Eq '^[[:space:]]*101:.*from 172\.30\.50\.10(/32)? prohibit'; then
         "$IP" -4 rule add \
-          priority 101 \
+          priority 91 \
           from 172.30.50.10/32 \
           prohibit
       fi
