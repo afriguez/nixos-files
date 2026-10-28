@@ -5,6 +5,7 @@
     ./users.nix
     ./networking.nix
     ./power.nix
+    ./shux-routing.nix
     ../services/docker.nix
     ../services/openssh.nix
     ../services/immich.nix

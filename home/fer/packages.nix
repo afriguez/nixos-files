@@ -56,6 +56,8 @@
       unzip
       uv
       vim
+      claude-code
+      pkgsRocm.blender
 
       # System maintenance
       just
