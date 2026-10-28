@@ -1,11 +1,10 @@
 { config, pkgs, ... }: {
   systemd.services.shux-routing = {
-    description = "Route directly through the ISP, bypassing Proton VPN";
+    description = "Bypass Proton VPN for shux traffic";
 
     wantedBy = [ "multi-user.target" ];
-    wants = [ "network-online.target" ];
     after = [ "network-online.target" ];
-    before = [ "docker.service" ];
+    wants = [ "network-online.target" ];
 
     serviceConfig = {
       Type = "oneshot";
@@ -15,26 +14,20 @@
     script = ''
       set -eu
 
-      IP="${pkgs.iproute2}/bin/ip"
-      GREP="${pkgs.gnugrep}/bin/grep"
+      IPTABLES="${pkgs.iptables}/bin/iptables"
 
-      if ! "$IP" -4 rule show |
-           "$GREP" -Eq '^[[:space:]]*90:.*from 172\.30\.50\.10(/32)? lookup main'; then
-        "$IP" -4 rule add \
-          priority 90 \
-          from 172.30.50.10/32 \
-          lookup main
+      # Proton's fwmark is 0xca6c.
+      if ! "$IPTABLES" -t mangle -C PREROUTING \
+          -s 172.30.50.10/32 \
+          -m comment --comment shux-bypass-proton \
+          -j MARK --set-xmark 0xca6c/0xffffffff 2>/dev/null; then
+        "$IPTABLES" -t mangle -I PREROUTING 1 \
+          -s 172.30.50.10/32 \
+          -m comment --comment shux-bypass-proton \
+          -j MARK --set-xmark 0xca6c/0xffffffff
       fi
 
-      if ! "$IP" -4 rule show |
-           "$GREP" -Eq '^[[:space:]]*91:.*from 172\.30\.50\.10(/32)? prohibit'; then
-        "$IP" -4 rule add \
-          priority 91 \
-          from 172.30.50.10/32 \
-          prohibit
-      fi
-
-      echo "shux-routing rules configured"
+      echo "shux Proton bypass packet marking configured"
     '';
   };
 }
