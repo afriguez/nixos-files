@@ -16,6 +16,7 @@
     ../services/proton-port-forwarding.nix
     ../services/paperless.nix
     ../services/navidrome.nix
+    ../services/tailscale.nix
   ];
 
   hardware.enableRedistributableFirmware = true;
