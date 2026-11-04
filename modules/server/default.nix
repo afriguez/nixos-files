@@ -17,6 +17,7 @@
     ../services/paperless.nix
     ../services/navidrome.nix
     ../services/tailscale.nix
+    ../services/kavita.nix
   ];
 
   hardware.enableRedistributableFirmware = true;

@@ -16,4 +16,5 @@
   users.users.qbittorrent.extraGroups = [ "media" ];
   users.users.paperless.extraGroups = [ "media"];
   users.users.navidrome.extraGroups = [ "media" ];
+  users.users.kavita.extraGroups = [ "media" ];
 }
